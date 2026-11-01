@@ -26,6 +26,8 @@ export async function generateMetadata(props: {
   })
 }
 
+// shortcut: Next export rejects dynamic routes with no params, remove once posts/tags exist.
+export const revalidate = 0
 export const generateStaticParams = async () => {
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)

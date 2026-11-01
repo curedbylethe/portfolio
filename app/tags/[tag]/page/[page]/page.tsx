@@ -7,6 +7,8 @@ import { notFound } from 'next/navigation'
 
 const POSTS_PER_PAGE = 5
 
+// shortcut: Next export rejects dynamic routes with no params, remove once posts/tags exist.
+export const revalidate = 0
 export const generateStaticParams = async () => {
   const tagCounts = tagData as Record<string, number>
   return Object.keys(tagCounts).flatMap((tag) => {
