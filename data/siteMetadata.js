@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: '',
-  author: '',
-  headerTitle: '',
-  description: '',
+  title: 'Lethe',
+  author: 'Lethe',
+  headerTitle: 'Lethe',
+  description: 'Daily answers to the Minute Cryptic clue, plus notes and projects.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://curedbylethe.github.io/portfolio', // derived from .github/workflows/pages.yml
