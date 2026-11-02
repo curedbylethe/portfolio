@@ -73,8 +73,6 @@ export async function generateMetadata(props: {
   }
 }
 
-// shortcut: Next export rejects dynamic routes with no params, remove once posts/tags exist.
-export const revalidate = 0
 export const generateStaticParams = async () => {
   return allBlogs.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
 }
