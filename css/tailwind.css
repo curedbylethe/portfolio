@@ -173,3 +173,18 @@ input:-webkit-autofill:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* Spoiler: glyphs dissolve into a checkerboard, with the missing pixels tinted
+   so the word reads as a scratched-off SIM-card foil rather than empty space. */
+.spoiler-pixels {
+  opacity: 0.9;
+  mask-image: repeating-conic-gradient(#000 0 25%, transparent 0 50%);
+  mask-size: 12px 12px;
+}
+
+.spoiler-foil {
+  opacity: 0.3;
+  background-image: repeating-conic-gradient(currentColor 0 25%, transparent 0 50%);
+  background-size: 12px 12px;
+  background-position: 6px 0;
+}
