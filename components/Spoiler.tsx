@@ -13,7 +13,7 @@ export default function Spoiler({ children }: { children: ReactNode }) {
     }
   }
 
-  if (revealed) return <span className="transition-[filter] duration-300">{children}</span>
+  if (revealed) return <span>{children}</span>
 
   return (
     <span
@@ -21,9 +21,10 @@ export default function Spoiler({ children }: { children: ReactNode }) {
       tabIndex={0}
       onClick={reveal}
       onKeyDown={onKeyDown}
-      className="cursor-pointer blur-xl transition-[filter] duration-300"
+      className="relative inline-block cursor-pointer"
     >
-      {children}
+      <span className="spoiler-pixels">{children}</span>
+      <span aria-hidden className="spoiler-foil pointer-events-none absolute inset-0" />
     </span>
   )
 }
