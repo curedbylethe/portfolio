@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Lethe',
-  author: 'Lethe',
-  headerTitle: 'Lethe',
+  title: 'Parsa Jahanbani',
+  author: 'Parsa Jahanbani',
+  headerTitle: 'Parsa Jahanbani',
   description: 'Daily answers to the Minute Cryptic clue, plus notes and projects.',
   language: 'en-us',
   theme: 'system', // system, dark or light
