@@ -3,7 +3,8 @@ const siteMetadata = {
   title: 'Parsa Jahanbani',
   author: 'Parsa Jahanbani',
   headerTitle: 'Parsa Jahanbani',
-  description: 'Daily answers to the Minute Cryptic clue, plus notes and projects.',
+  description:
+    'Product engineer. 4+ years in fintech and research infrastructure. React, Next.js, TypeScript, Node.js, Fastify, PostgreSQL, Redis, BullMQ. Rust for CLI and systems work.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://curedbylethe.github.io/portfolio', // derived from .github/workflows/pages.yml
