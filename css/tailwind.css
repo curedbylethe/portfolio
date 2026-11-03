@@ -7,6 +7,9 @@
 
 @theme {
   --font-sans: 'Golos Text', ui-sans-serif, system-ui, sans-serif;
+  --color-gray-400: var(--text-muted);
+  --color-gray-500: var(--text-muted);
+  --color-gray-600: var(--text-muted);
 }
 
 :root {
