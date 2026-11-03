@@ -16,7 +16,10 @@ export default function AuthorLayout({ children, content }: Props) {
       <div className="fp-about">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <div className="fp-section-head">
-            <span className="fp-section-num">04</span>
+            <span className="fp-section-ghost" aria-hidden="true">
+              03
+            </span>
+            <span className="fp-section-num">03</span>
             <h1 className="text-3xl leading-9 tracking-tight sm:text-4xl md:text-6xl">About</h1>
           </div>
         </div>

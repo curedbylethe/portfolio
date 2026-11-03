@@ -83,7 +83,10 @@ export default function ListLayoutWithTags({
     <>
       <div className="fp-list">
         <div className="fp-section-head">
-          <span className="fp-section-num">{pathname.startsWith('/tags') ? '03' : '02'}</span>
+          <span className="fp-section-ghost" aria-hidden="true">
+            02
+          </span>
+          <span className="fp-section-num">02</span>
           <h1 className="fp-page-title text-3xl leading-9 tracking-tight sm:text-4xl md:text-6xl">
             {title}
           </h1>
