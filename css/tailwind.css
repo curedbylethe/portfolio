@@ -77,6 +77,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-page-title { margin: 0; padding: 0; border: 0; font-size: clamp(2rem, 1.55rem + 2.2vw, 3.25rem) !important; line-height: 1 !important; }
 .fp-list { padding-bottom: 48px; }
 .fp-posts { margin: 0; padding: 0; list-style: none; }
+.fp-post-list { flex: 1; min-width: 0; }
 .fp-post-row { border-bottom: 1px solid var(--line-faint); }
 .fp-post-row article { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: 24px; align-items: baseline; }
 .fp-post-row article > dl { grid-column: span 2; }
