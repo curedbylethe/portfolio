@@ -1,13 +1,12 @@
 import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
-import Comments from '@/components/Comments'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import ScrollTop from '@/components/ScrollTop'
 
 interface LayoutProps {
   content: CoreContent
@@ -17,11 +16,11 @@ interface LayoutProps {
 }
 
 export default function PostLayout({ content, next, prev, children }: LayoutProps) {
-  const { slug, date, title, tags } = content
+  const { date, title, tags } = content
 
   return (
     <SectionContainer>
-      <ScrollTopAndComment />
+      <ScrollTop />
       <article className="fp-article">
         <header className="fp-article-heading">
           <Link href="/blog" className="fp-detail-back">
@@ -43,11 +42,6 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
         </header>
         <div className="fp-article-content">
           <div className="prose max-w-none">{children}</div>
-          {siteMetadata.comments && (
-            <div className="fp-comments" id="comment">
-              <Comments slug={slug} />
-            </div>
-          )}
           {(next || prev) && (
             <nav className="fp-post-pagination" aria-label="Post navigation">
               {prev?.path && <Link href={`/${prev.path}`}>{prev.title}</Link>}

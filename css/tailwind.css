@@ -140,7 +140,6 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-article .prose :where(h2,h3,h4) { color: var(--carbon); font-family: var(--font-body); }
 .fp-article .prose a { color: var(--text); text-decoration-color: var(--line); text-underline-offset: 3px; }
 .fp-article .prose a:hover { text-decoration-color: var(--accent); }
-.fp-comments { padding-block: 24px; }
 .fp-post-pagination { display: flex; justify-content: space-between; gap: 24px; padding-top: 24px; border-top: 1px solid var(--line-faint); }
 .fp-post-pagination a { text-decoration: none; }
 .fp-post-pagination a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
