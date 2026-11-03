@@ -92,42 +92,44 @@ export default function ListLayoutWithTags({
           </h1>
         </div>
         <div className="flex sm:space-x-24">
-          <div className="fp-tags hidden h-full max-h-screen max-w-[280px] min-w-[280px] flex-wrap overflow-auto pt-5 sm:flex">
-            <div className="px-6 py-4">
-              {pathname.startsWith('/blog') ? (
-                <h3 className="text-primary-500 font-bold uppercase">All Posts</h3>
-              ) : (
-                <Link
-                  href={`/blog`}
-                  className="hover:text-primary-500 dark:hover:text-primary-500 font-bold text-[var(--text-muted)] uppercase"
-                >
-                  All Posts
-                </Link>
-              )}
-              <ul>
-                {sortedTags.map((t) => {
-                  return (
-                    <li key={t} className="my-3">
-                      {decodeURI(pathname.split('/tags/')[1]) === slug(t) ? (
-                        <h3 className="text-primary-500 inline px-3 py-2 text-sm font-bold uppercase">
-                          {`${t} (${tagCounts[t]})`}
-                        </h3>
-                      ) : (
-                        <Link
-                          href={`/tags/${slug(t)}`}
-                          className="hover:text-primary-500 dark:hover:text-primary-500 px-3 py-2 text-sm font-medium text-[var(--text-muted)] uppercase"
-                          aria-label={`View posts tagged ${t}`}
-                        >
-                          {`${t} (${tagCounts[t]})`}
-                        </Link>
-                      )}
-                    </li>
-                  )
-                })}
-              </ul>
+          {!pathname.startsWith('/blog') && (
+            <div className="fp-tags hidden h-full max-h-screen max-w-[280px] min-w-[280px] flex-wrap overflow-auto pt-5 sm:flex">
+              <div className="px-6 py-4">
+                {pathname.startsWith('/blog') ? (
+                  <h3 className="text-primary-500 font-bold uppercase">All Posts</h3>
+                ) : (
+                  <Link
+                    href={`/blog`}
+                    className="hover:text-primary-500 dark:hover:text-primary-500 font-bold text-[var(--text-muted)] uppercase"
+                  >
+                    All Posts
+                  </Link>
+                )}
+                <ul>
+                  {sortedTags.map((t) => {
+                    return (
+                      <li key={t} className="my-3">
+                        {decodeURI(pathname.split('/tags/')[1]) === slug(t) ? (
+                          <h3 className="text-primary-500 inline px-3 py-2 text-sm font-bold uppercase">
+                            {`${t} (${tagCounts[t]})`}
+                          </h3>
+                        ) : (
+                          <Link
+                            href={`/tags/${slug(t)}`}
+                            className="hover:text-primary-500 dark:hover:text-primary-500 px-3 py-2 text-sm font-medium text-[var(--text-muted)] uppercase"
+                            aria-label={`View posts tagged ${t}`}
+                          >
+                            {`${t} (${tagCounts[t]})`}
+                          </Link>
+                        )}
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div>
+          )}
+          <div className="fp-post-list">
             <ul className="fp-posts">
               {displayPosts.map((post) => {
                 const { path, date, title, summary, tags } = post
