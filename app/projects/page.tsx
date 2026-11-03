@@ -13,7 +13,7 @@ export default function Projects() {
             01
           </span>
           <span className="fp-section-num">01</span>
-          <h1 className="text-3xl leading-9 tracking-tight sm:text-4xl md:text-6xl">Projects</h1>
+          <h1 className="fp-page-title">Projects</h1>
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
