@@ -8,6 +8,7 @@ import MobileNav from './MobileNav'
 
 const Header = () => {
   const pathname = usePathname()
+  if (pathname === '/') return null
   let headerClass = 'fp-header flex items-center w-full justify-between py-6'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
