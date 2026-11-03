@@ -135,7 +135,7 @@ export default function ListLayoutWithTags({
                 const { path, date, title, summary, tags } = post
                 return (
                   <li key={path} className="fp-post-row py-5">
-                    <article className="flex flex-col space-y-2 xl:space-y-0">
+                    <article className="fp-post-grid">
                       <dl>
                         <dt className="sr-only">Published on</dt>
                         <dd className="text-base leading-6 font-medium text-[var(--text-muted)]">
@@ -144,20 +144,18 @@ export default function ListLayoutWithTags({
                           </time>
                         </dd>
                       </dl>
-                      <div className="space-y-3">
-                        <div>
-                          <h2 className="text-2xl leading-8 font-bold tracking-tight">
-                            <Link href={`/${path}`} className="text-[var(--text)]">
-                              {title}
-                            </Link>
-                          </h2>
-                          <div className="flex flex-wrap">
-                            {tags?.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
+                      <div className="fp-post-main">
+                        <h2 className="fp-post-title">
+                          <Link href={`/${path}`} className="text-[var(--text)]">
+                            {title}
+                          </Link>
+                        </h2>
+                        <div className="fp-post-tags flex flex-wrap">
+                          {tags?.map((tag) => (
+                            <Tag key={tag} text={tag} />
+                          ))}
                         </div>
-                        <div className="prose max-w-none text-[var(--text-muted)]">{summary}</div>
+                        <div className="fp-post-summary text-[var(--text-muted)]">{summary}</div>
                       </div>
                     </article>
                   </li>
