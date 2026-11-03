@@ -55,11 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const basePath = process.env.BASE_PATH || ''
 
   return (
-    <html
-      lang={siteMetadata.language}
-      className="scroll-smooth"
-      suppressHydrationWarning
-    >
+    <html lang={siteMetadata.language} className="scroll-smooth" suppressHydrationWarning>
       <link
         rel="apple-touch-icon"
         sizes="76x76"
@@ -91,10 +87,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
-            <a className="fp-skip" href="#main">Skip to content</a>
+            <a className="fp-skip" href="#main">
+              Skip to content
+            </a>
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
               <Header />
-              <main id="main" className="fp-main mb-auto">{children}</main>
+              <main id="main" className="fp-main mb-auto">
+                {children}
+              </main>
             </SearchProvider>
             <Footer />
           </SectionContainer>

@@ -22,8 +22,8 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 }
 
 interface LayoutProps {
-  content: CoreContent<Blog>
-  authorDetails: CoreContent<Authors>[]
+  content: CoreContent
+  authorDetails: CoreContent[]
   next?: { path: string; title: string }
   prev?: { path: string; title: string }
   children: ReactNode
@@ -39,7 +39,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <article className="fp-article">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
-              <div className="fp-article-heading space-y-1">
+            <div className="fp-article-heading space-y-1">
               <dl className="space-y-10">
                 <div>
                   <dt className="sr-only">Published on</dt>

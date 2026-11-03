@@ -5,7 +5,7 @@ import Image from '@/components/Image'
 
 interface Props {
   children: ReactNode
-  content: Omit<Authors, '_id' | '_raw' | 'body'>
+  content: Omit
 }
 
 export default function AuthorLayout({ children, content }: Props) {
@@ -17,12 +17,10 @@ export default function AuthorLayout({ children, content }: Props) {
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <div className="fp-section-head">
             <span className="fp-section-num">04</span>
-            <h1 className="text-3xl leading-9 tracking-tight sm:text-4xl md:text-6xl">
-            About
-            </h1>
+            <h1 className="text-3xl leading-9 tracking-tight sm:text-4xl md:text-6xl">About</h1>
           </div>
         </div>
-        <div className="fp-about-content items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="fp-about-content items-start space-y-2 xl:grid xl:grid-cols-3 xl:space-y-0 xl:gap-x-8">
           <div className="flex flex-col items-center space-x-2 pt-8">
             {avatar && (
               <Image
