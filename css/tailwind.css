@@ -68,7 +68,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-detail h1 { font-size: clamp(2rem, 1.55rem + 2.2vw, 3.25rem); line-height: 1; }
 .fp-detail p { line-height: 1.55; }
 .fp-main { max-width: none; width: 100%; margin: 0; padding-inline: clamp(20px, 4vw, 40px); }
-.fp-page-title { margin: 0; padding-block: 48px 24px; border-bottom: 1px solid var(--line); font-size: clamp(2rem, 1.55rem + 2.2vw, 3.25rem) !important; line-height: 1 !important; }
+.fp-page-title { margin: 0; padding: 0; border: 0; font-size: clamp(2rem, 1.55rem + 2.2vw, 3.25rem) !important; line-height: 1 !important; }
 .fp-list { padding-bottom: 48px; }
 .fp-posts { margin: 0; padding: 0; list-style: none; }
 .fp-post-row { border-bottom: 1px solid var(--line-faint); }
@@ -80,7 +80,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-post-row h2 a, .fp-post-row h3 a { text-decoration: none; }
 .fp-post-row h2 a:hover, .fp-post-row h3 a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
 .fp-tags { border-right: 1px solid var(--line-faint); }
-.fp-section-head { position: relative; display: flex; align-items: end; gap: 24px; min-height: 140px; padding: 48px 0 24px; border-bottom: 1px solid var(--line); overflow: clip; }
+.fp-section-head { position: relative; display: flex; align-items: end; gap: 24px; min-height: clamp(140px, 15vw, 200px); padding-block: clamp(48px, 8vh, 88px) 24px; border-bottom: 1px solid var(--line); overflow: clip; }
 .fp-section-ghost { position: absolute; left: 0; right: auto; bottom: 0; z-index: 0; color: var(--ink-04); font: 400 clamp(120px, 18vw, 240px)/.8 var(--font-display); pointer-events: none; user-select: none; }
 .fp-section-head::after { content: ''; position: absolute; inset-inline: 0; bottom: -4px; height: 1px; background: var(--line-faint); }
 .fp-section-head h1 { position: relative; z-index: 1; margin: 0; }
