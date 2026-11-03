@@ -9,6 +9,9 @@ export default function Projects() {
     <>
       <div className="fp-list">
         <div className="fp-section-head">
+          <span className="fp-section-ghost" aria-hidden="true">
+            01
+          </span>
           <span className="fp-section-num">01</span>
           <h1 className="text-3xl leading-9 tracking-tight sm:text-4xl md:text-6xl">Projects</h1>
         </div>
