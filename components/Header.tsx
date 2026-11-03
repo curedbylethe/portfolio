@@ -28,7 +28,7 @@ const Header = () => {
           <Link
             key={link.title}
             href={link.href}
-            className="fp-nav-link m-1 font-medium"
+            className="fp-nav-link"
             aria-current={
               pathname === link.href || pathname.startsWith(`${link.href}/`) ? 'page' : undefined
             }
