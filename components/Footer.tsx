@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="fp-footer">
       <div className="mx-auto flex w-full max-w-5xl flex-col justify-between gap-3 px-5 py-6 sm:flex-row sm:items-center">
-        {siteMetadata.email && <a href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</a>}
+        <a href="mailto:jahanbani73@gmail.com">Contact Me</a>
         <div className="flex flex-wrap gap-2">
           <div>{siteMetadata.author}</div>
           <div>{` • `}</div>
