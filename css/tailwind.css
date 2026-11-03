@@ -1,5 +1,5 @@
-@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Russo+One&display=swap');
+@import 'tailwindcss';
 @plugin "@tailwindcss/forms";
 @plugin '@tailwindcss/typography';
 @source '../node_modules/pliny';
@@ -45,6 +45,10 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-footer a { min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; }
 .fp-rule { width: 40px; height: 2px; margin: 24px auto; background: var(--accent); }
 .fp-index { width: min(100%, 58ch); margin-inline: auto; }
+.fp-home { min-height: min(72vh, 780px); display: flex; flex-direction: column; justify-content: center; gap: clamp(40px, 6vh, 72px); padding-block: clamp(32px, 6vh, 64px); }
+.fp-intro { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+.fp-home-title { margin: 0; font: 400 clamp(2.5rem, 1.7rem + 4vw, 5rem)/1 var(--font-display); letter-spacing: -.03em; }
+.fp-intro p { max-width: 58ch; font-size: clamp(1rem, .96rem + .2vw, 1.125rem); line-height: 1.55; text-wrap: pretty; }
 .fp-index a { min-height: 44px; display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--line-faint); padding-block: 12px; text-decoration: none; }
 .fp-index a::after { content: ''; flex: 1; border-bottom: 1px dotted var(--line); }
 .fp-index a span:last-child { order: 1; color: var(--text-muted); font: 12px var(--font-mono); letter-spacing: .08em; }
