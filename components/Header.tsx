@@ -2,9 +2,13 @@
 
 import { usePathname } from 'next/navigation'
 import siteMetadata from '@/data/siteMetadata'
-import headerNavLinks from '@/data/headerNavLinks'
 import Link from './Link'
-import MobileNav from './MobileNav'
+
+const sections = [
+  { href: '/projects', title: 'Projects', index: '01' },
+  { href: '/blog', title: 'Blog', index: '02' },
+  { href: '/about', title: 'About', index: '03' },
+]
 
 const Header = () => {
   const pathname = usePathname()
@@ -19,23 +23,23 @@ const Header = () => {
       <Link href="/" aria-label={siteMetadata.headerTitle} className="fp-wordmark">
         {siteMetadata.headerTitle}
       </Link>
-      <div className="flex items-center gap-4 leading-5 sm:space-x-6">
-        <nav aria-label="Sections" className="fp-nav flex flex-wrap items-center gap-x-6">
-          {headerNavLinks
-            .filter((link) => link.href !== '/')
-            .map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className="fp-nav-link m-1 font-medium"
-                aria-current={pathname === link.href ? 'page' : undefined}
-              >
-                {link.title}
-              </Link>
-            ))}
-        </nav>
-        <MobileNav />
-      </div>
+      <nav aria-label="Sections" className="fp-nav flex flex-wrap items-center gap-x-6">
+        {sections.map((link) => (
+          <Link
+            key={link.title}
+            href={link.href}
+            className="fp-nav-link m-1 font-medium"
+            aria-current={
+              pathname === link.href || pathname.startsWith(`${link.href}/`) ? 'page' : undefined
+            }
+          >
+            <span className="fp-nav-index" aria-hidden="true">
+              {link.index}
+            </span>
+            {link.title}
+          </Link>
+        ))}
+      </nav>
     </header>
   )
 }
