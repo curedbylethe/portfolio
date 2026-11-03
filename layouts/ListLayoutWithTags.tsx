@@ -99,7 +99,7 @@ export default function ListLayoutWithTags({
               ) : (
                 <Link
                   href={`/blog`}
-                  className="hover:text-primary-500 dark:hover:text-primary-500 font-bold text-gray-700 uppercase dark:text-gray-300"
+                  className="hover:text-primary-500 dark:hover:text-primary-500 font-bold text-[var(--text-muted)] uppercase"
                 >
                   All Posts
                 </Link>
@@ -115,7 +115,7 @@ export default function ListLayoutWithTags({
                       ) : (
                         <Link
                           href={`/tags/${slug(t)}`}
-                          className="hover:text-primary-500 dark:hover:text-primary-500 px-3 py-2 text-sm font-medium text-gray-500 uppercase dark:text-gray-300"
+                          className="hover:text-primary-500 dark:hover:text-primary-500 px-3 py-2 text-sm font-medium text-[var(--text-muted)] uppercase"
                           aria-label={`View posts tagged ${t}`}
                         >
                           {`${t} (${tagCounts[t]})`}
@@ -136,7 +136,7 @@ export default function ListLayoutWithTags({
                     <article className="flex flex-col space-y-2 xl:space-y-0">
                       <dl>
                         <dt className="sr-only">Published on</dt>
-                        <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+                        <dd className="text-base leading-6 font-medium text-[var(--text-muted)]">
                           <time dateTime={date} suppressHydrationWarning>
                             {formatDate(date, siteMetadata.locale)}
                           </time>
@@ -145,7 +145,7 @@ export default function ListLayoutWithTags({
                       <div className="space-y-3">
                         <div>
                           <h2 className="text-2xl leading-8 font-bold tracking-tight">
-                            <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
+                            <Link href={`/${path}`} className="text-[var(--text)]">
                               {title}
                             </Link>
                           </h2>
@@ -155,9 +155,7 @@ export default function ListLayoutWithTags({
                             ))}
                           </div>
                         </div>
-                        <div className="prose max-w-none text-gray-500 dark:text-gray-400">
-                          {summary}
-                        </div>
+                        <div className="prose max-w-none text-[var(--text-muted)]">{summary}</div>
                       </div>
                     </article>
                   </li>
