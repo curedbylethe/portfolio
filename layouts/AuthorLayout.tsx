@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
-import Image from '@/components/Image'
+import BracketLink from '@/components/BracketLink'
 
 interface Props {
   children: ReactNode
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, email, twitter, bluesky, linkedin, github } = content
+  const { email, twitter, bluesky, linkedin, github } = content
 
   return (
     <>
@@ -23,30 +23,36 @@ export default function AuthorLayout({ children, content }: Props) {
             <h1 className="fp-page-title">About</h1>
           </div>
         </div>
-        <div className="fp-about-content items-start space-y-2 xl:grid xl:grid-cols-3 xl:space-y-0 xl:gap-x-8">
-          <div className="flex flex-col items-center space-x-2 pt-8">
-            {avatar && (
-              <Image
-                src={avatar}
-                alt="avatar"
-                width={192}
-                height={192}
-                className="h-48 w-48 rounded-full"
-              />
-            )}
-            <h3 className="pt-4 pb-2 text-2xl leading-8 font-bold tracking-tight">{name}</h3>
-            <div className="text-[var(--text-muted)]">{occupation}</div>
-            <div className="text-[var(--text-muted)]">{company}</div>
-            <div className="flex space-x-3 pt-6">
-              <SocialIcon kind="mail" href={`mailto:${email}`} />
-              <SocialIcon kind="github" href={github} />
-              <SocialIcon kind="linkedin" href={linkedin} />
-              <SocialIcon kind="x" href={twitter} />
-              <SocialIcon kind="bluesky" href={bluesky} />
+        <div className="fp-about-content">
+          <div className="fp-about-prose">
+            <div className="fp-about-overview">{children}</div>
+            <h2>Now</h2>
+            <div className="fp-about-now">
+              Solo-building Catlog, a Telegram-based music platform for communities. I pick up side
+              projects when an idea lands and use whatever fits. Open to open-source work,
+              especially projects I use.
             </div>
-          </div>
-          <div className="prose dark:prose-invert max-w-none pt-8 pb-8 xl:col-span-2">
-            {children}
+            <h2>Facts</h2>
+            <dl className="fp-facts">
+              <dt>Based</dt>
+              <dd>Tehran (UTC+03:30)</dd>
+              <dt>Stack</dt>
+              <dd>React/Next.js, Node, Fastify, PostgreSQL, Redis, BullMQ, Rust, Docker, Linux</dd>
+              <dt>Availability</dt>
+              <dd>Available</dd>
+              <dt>Social links</dt>
+              <dd className="fp-facts-social">
+                <SocialIcon kind="mail" href={`mailto:${email}`} />
+                {github && (
+                  <BracketLink href={github} target="_blank" rel="noopener noreferrer">
+                    GITHUB
+                  </BracketLink>
+                )}
+                <SocialIcon kind="linkedin" href={linkedin} />
+                <SocialIcon kind="x" href={twitter} />
+                <SocialIcon kind="bluesky" href={bluesky} />
+              </dd>
+            </dl>
           </div>
         </div>
       </div>
