@@ -7,14 +7,14 @@ import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
+  let headerClass = 'fp-header flex items-center w-full justify-between py-6'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-0 z-50'
   }
 
   return (
     <header className={headerClass}>
-      <Link href="/" aria-label={siteMetadata.headerTitle}>
+      <Link href="/" aria-label={siteMetadata.headerTitle} className="fp-wordmark">
         <div className="flex items-center justify-between">
           <div className="mr-3">
             <Logo />
@@ -28,20 +28,20 @@ const Header = () => {
           )}
         </div>
       </Link>
-      <div className="flex items-center space-x-4 leading-5 sm:-mr-6 sm:space-x-6">
-        <div className="no-scrollbar hidden max-w-40 items-center gap-x-4 overflow-x-auto sm:flex md:max-w-72 lg:max-w-96">
+      <div className="flex items-center gap-4 leading-5 sm:space-x-6">
+        <nav aria-label="Sections" className="fp-nav flex flex-wrap items-center gap-x-6">
           {headerNavLinks
             .filter((link) => link.href !== '/')
             .map((link) => (
               <Link
                 key={link.title}
                 href={link.href}
-                className="hover:text-primary-500 dark:hover:text-primary-400 m-1 font-medium text-gray-900 dark:text-gray-100"
+                className="fp-nav-link m-1 font-medium"
               >
                 {link.title}
               </Link>
             ))}
-        </div>
+        </nav>
         <SearchButton />
         <ThemeSwitch />
         <MobileNav />
