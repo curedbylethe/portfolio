@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <polygon id="star" points="12 0, 14.688 8.28, 23.424 8.28, 16.368 13.416, 19.056 21.72, 12 16.584, 4.944 21.72, 7.632 13.416, 0.576 8.28, 9.312 8.28" transform="translate(1.44 1.44) scale(0.88)"/>
+    <clipPath id="clip"><use href="#star"/></clipPath>
+    <pattern id="wear1" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(8)">
+      <rect y="2" width="5" height="1" fill="#ede4d3" opacity="0.22"/>
+    </pattern>
+    <pattern id="wear2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(97)">
+      <rect y="3" width="7" height="1" fill="#ede4d3" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="24" height="24" fill="#ede4d3"/>
+  <g clip-path="url(#clip)">
+    <rect width="24" height="24" fill="#b93b2c"/>
+    <rect width="24" height="24" fill="url(#wear1)"/>
+    <rect width="24" height="24" fill="url(#wear2)"/>
+  </g>
+</svg>
