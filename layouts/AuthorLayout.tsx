@@ -1,11 +1,12 @@
 import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
+import type { CoreContent } from 'pliny/utils/contentlayer'
 import SocialIcon from '@/components/social-icons'
 import BracketLink from '@/components/BracketLink'
 
 interface Props {
   children: ReactNode
-  content: Omit
+  content: CoreContent<Authors>
 }
 
 export default function AuthorLayout({ children, content }: Props) {

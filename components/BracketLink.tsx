@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react'
 
-type Props = AnchorHTMLAttributes & {
+type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode
   href: string
 }

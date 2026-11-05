@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import Image from '@/components/Image'
 import Bleed from 'pliny/ui/Bleed'
-import { CoreContent } from 'pliny/utils/contentlayer'
+import type { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
@@ -9,7 +9,7 @@ import SectionContainer from '@/components/SectionContainer'
 import ScrollTop from '@/components/ScrollTop'
 
 interface LayoutProps {
-  content: CoreContent
+  content: CoreContent<Blog>
   children: ReactNode
   next?: { path: string; title: string }
   prev?: { path: string; title: string }
