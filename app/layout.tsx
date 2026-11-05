@@ -89,9 +89,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
-            <a className="fp-skip" href="#main">
-              Skip to content
-            </a>
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
               <Header />
               <main id="main" className="fp-main mb-auto">
