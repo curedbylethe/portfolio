@@ -96,6 +96,7 @@ module.exports = () => {
       ]
     },
     webpack: (config, options) => {
+      config.cache = { type: 'memory' }
       config.module.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
