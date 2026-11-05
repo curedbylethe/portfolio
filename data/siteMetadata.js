@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Parsa Jahanbani',
   headerTitle: 'Parsa Jahanbani',
   description:
-    'Product engineer. 4+ years in fintech and research infrastructure. React, Next.js, TypeScript, Node.js, Fastify, PostgreSQL, Redis, BullMQ. Rust for CLI and systems work.',
+    'Product engineer. 4+ years in fintech and research infrastructure. React, Next.js, TypeScript, Node.js, Fastify, PostgreSQL, Redis, BullMQ. Rust/Go for CLI and systems work.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://curedbylethe.github.io/portfolio', // derived from .github/workflows/pages.yml
