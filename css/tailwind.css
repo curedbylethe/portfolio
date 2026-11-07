@@ -183,6 +183,21 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-hero { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; align-items: start; padding-block: 32px 48px; }
 .fp-project-hero-text { grid-column: 1 / span 6; display: grid; align-content: start; gap: 16px; }
 .fp-project-hero-side { grid-column: 8 / span 5; display: grid; align-content: start; gap: 24px; }
+.fp-install-window { position: relative; isolation: isolate; margin: 0; overflow: hidden; border: 1px solid var(--charcoal); background: var(--onyx); color: var(--bone); font: 400 clamp(.8125rem, .79rem + .16vw, .9375rem)/1.7 var(--font-mono); font-variant-ligatures: none; }
+.fp-install-window::after { content: ''; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: repeating-linear-gradient(to bottom, color-mix(in srgb, var(--bone) 3%, transparent) 0 1px, transparent 1px 4px); }
+.fp-install-window-bar { display: flex; min-height: 44px; align-items: center; gap: 12px; padding-left: 12px; border-bottom: 1px solid color-mix(in srgb, var(--bone) 14%, transparent); background: color-mix(in srgb, var(--onyx) 58%, var(--charcoal)); color: color-mix(in srgb, var(--bone) 68%, var(--olive)); }
+.fp-install-lamps { display: flex; flex: none; gap: 4px; }
+.fp-install-lamp { width: 6px; height: 6px; border: 1px solid color-mix(in srgb, var(--bone) 28%, transparent); }
+.fp-install-lamp-live { border-color: var(--accent); background: var(--accent); }
+.fp-install-file { min-width: 0; flex: 1; overflow: hidden; color: var(--bone); font-size: .75rem; letter-spacing: .02em; text-overflow: ellipsis; white-space: nowrap; }
+.fp-install-lang { flex: none; padding: 2px 6px; border: 1px solid color-mix(in srgb, var(--bone) 26%, transparent); font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; }
+.fp-install-copy { display: inline-flex; min-height: 44px; flex: none; align-self: stretch; align-items: center; padding: 0 12px; border: 0; border-left: 1px solid color-mix(in srgb, var(--bone) 14%, transparent); background: transparent; color: inherit; font: 500 .6875rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.fp-install-copy:hover { background: color-mix(in srgb, var(--bone) 8%, transparent); color: var(--bone); }
+.fp-install-copy[data-copied='true'] { color: var(--accent); }
+.fp-install-copy:focus-visible, .fp-install-scroll:focus-visible { outline: 2px solid var(--bone); outline-offset: -3px; }
+.fp-install-scroll { overflow-x: auto; overscroll-behavior-x: contain; padding: 16px 16px 24px; scrollbar-color: var(--charcoal) transparent; scrollbar-width: thin; }
+.fp-install-scroll pre { max-width: 100%; margin: 0; padding: 0; border: 0; background: none; font: inherit; white-space: pre; }
+.fp-install-prompt { color: var(--accent); user-select: none; }
 .fp-project-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; margin: 0; }
 .fp-project-meta > div { display: grid; align-content: start; gap: 4px; }
 .fp-project-headline { font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem); font-weight: 500; line-height: 1.15; }
@@ -190,6 +205,9 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 @media (max-width: 1023px) {
   .fp-project-hero-text, .fp-project-hero-side { grid-column: 1 / -1; }
   .fp-project-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 768px) {
+  .fp-install-scroll { padding-inline: 24px; }
 }
 @media (max-width: 767px) {
   .fp-project-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }

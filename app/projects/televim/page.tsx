@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { genPageMetadata } from 'app/seo'
+import InstallCommand from '@/components/InstallCommand'
 
 export const metadata = genPageMetadata({
   title: 'Televim',
@@ -25,6 +26,7 @@ export default function TelevimPage() {
           </p>
         </div>
         <aside className="fp-project-hero-side" aria-label="Project information">
+          <InstallCommand />
           <dl className="fp-project-meta">
             <div>
               <dt>Language</dt>
