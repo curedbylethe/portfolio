@@ -18,11 +18,12 @@ export default function TelevimPage() {
       <section className="fp-project-hero">
         <div className="fp-project-hero-text">
           <p className="fp-meta fp-project-kicker">Dossier 01 / Terminal application</p>
-          <h1>Televim</h1>
+          <h1 className="fp-project-title">Televim</h1>
           <p className="fp-project-headline">Telegram, without leaving your terminal.</p>
           <p className="fp-project-lede">
-            Read and answer Telegram messages with a keyboard-first interface. Televim keeps private
-            conversations local, separates its pure domain crate, and enforces a memory budget in CI.
+            Read and answer your Telegram messages in a terminal window, using only the keyboard.
+            Televim borrows Vim’s modes, so a handful of keys move, write and search. It shows
+            one-to-one chats and nothing else.
           </p>
           <div className="fp-project-actions">
             <a
