@@ -160,39 +160,48 @@ export default function TelevimPage() {
             <div className="fp-project-author-note">
               <span>WHY I BUILT IT</span>
               <p>
-                Telegram was always open while I worked, both for conversations with coworkers and
-                for keeping notes. With Docker containers, browser tabs, and AI agents already
-                competing for resources, its graphical client felt like an unnecessary expense and
-                another source of distraction. I was already using Helix in the terminal, so
-                bringing Telegram there seemed like the obvious choice.
+                Telegram was always open for work conversations and notes. With Docker containers,
+                browser tabs, and AI agents already running, its GUI felt like unnecessary overhead
+                and another distraction. Since I worked in the terminal with Helix, bringing
+                Telegram there was a natural choice.
               </p>
               <p>
-                I also missed Vim&apos;s editing model. Fixing a typo three lines up or replacing a
-                word throughout a long message shouldn&apos;t require reaching for the mouse. I wanted
-                the same speed and control over conversations that I had over code.
+                I missed Vim&apos;s editing model, too. Fixing a typo three lines up or replacing a
+                word throughout a message shouldn&apos;t require a series of clicks. I wanted the same
+                speed and control over my conversations that I had over my code.
               </p>
-              <p>
-                I started with private chats, leaving out groups and channels because I rarely
-                needed them. That&apos;s changing as more of my open-source work happens in Telegram
-                groups. Media was a firmer decision: stickers are welcome, but images and videos
-                belong in external viewers. I wasn&apos;t trying to recreate Telegram&apos;s desktop client
-                inside a terminal.
-              </p>
+              <h4>Design constraints</h4>
               <ul>
                 <li>
-                  Keyboard first. Navigation and editing should remain usable without a mouse.
+                  <strong>Keyboard first.</strong> Navigation and editing should remain usable
+                  without a mouse.
                 </li>
                 <li>
-                  Keep the client small. Avoid competing with the development environment for
-                  resources.
+                  <strong>Keep the client small.</strong> Avoid competing with the development
+                  environment for resources.
                 </li>
                 <li>
-                  Delegate, don&apos;t duplicate. Let dedicated applications handle media playback and
-                  viewing.
+                  <strong>Delegate, don&apos;t duplicate.</strong> Let dedicated applications handle
+                  media playback and viewing.
                 </li>
                 <li>
-                  Scope follows actual use. Features earn their place through practical needs, not
-                  parity with Telegram&apos;s desktop client.
+                  <strong>Scope follows actual use.</strong> Features earn their place through
+                  practical needs, not parity with Telegram&apos;s desktop client.
+                </li>
+              </ul>
+              <h4>Early trade-offs</h4>
+              <ul>
+                <li>
+                  <strong>Private chats first.</strong> Groups and channels were initially excluded
+                  as distractions. Open-source collaboration has since made group support necessary.
+                </li>
+                <li>
+                  <strong>Media stays external.</strong> Stickers render in supported terminals, but
+                  images, GIFs, and videos are handed to dedicated viewers.
+                </li>
+                <li>
+                  <strong>Music through Mizrab.</strong> Planned integration with my separate
+                  terminal music player, launched as a subprocess rather than built into Televim.
                 </li>
               </ul>
             </div>
