@@ -31,7 +31,7 @@
   --text-muted: color-mix(in srgb, var(--olive) 55%, var(--onyx));
   --accent: var(--brownred);
   --ink-04: rgb(13 13 13 / 4%);
-  --font-display: 'Russo One', 'Arial Black', sans-serif;
+  --font-display: 'Russo One', 'Arial Black', system-ui, sans-serif;
   --font-body: 'Golos Text', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
