@@ -5,6 +5,8 @@ import { genPageMetadata } from 'app/seo'
 export const metadata = genPageMetadata({ title: 'Projects' })
 
 export default function Projects() {
+  const projectCount = projectsData.length
+
   return (
     <>
       <div className="fp-list">
@@ -14,6 +16,11 @@ export default function Projects() {
           </span>
           <span className="fp-section-num">01</span>
           <h1 className="fp-page-title">Projects</h1>
+          <p className="fp-projects-meta">
+            {new Date().getFullYear()}
+            <br />
+            {projectCount} {projectCount === 1 ? 'dossier' : 'dossiers'} · specimens in development
+          </p>
         </div>
         <div className="fp-project-catalog">
           <ol className="fp-projects" aria-label="Project dossiers">
