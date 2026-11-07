@@ -227,6 +227,74 @@ export default function TelevimPage() {
         </p>
       </header>
 
+      <section id="s03" className="fp-project-dsec" aria-labelledby="s03-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            03
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act II · The brief</span>
+            <h2 id="s03-h">Goals, rules, exclusions</h2>
+          </div>
+          <p className="fp-project-section-read">1 min</p>
+        </header>
+        <div className="fp-project-brief">
+          <div className="fp-project-brief-col">
+            <h3>
+              <span>Had to achieve</span>
+              <span>A</span>
+            </h3>
+            <ul>
+              <li>
+                <b>Modal editing</b>Normal, Insert and Visual modes for moving, writing and
+                searching.
+              </li>
+              <li>
+                <b>A small process</b>Under 50 MB of RAM, measured on every change to the code.
+              </li>
+              <li>
+                <b>A working protocol</b>Sign in, fetch the private chat list, send and receive over
+                MTProto.
+              </li>
+            </ul>
+          </div>
+          <div className="fp-project-brief-col">
+            <h3>
+              <span>Had to respect</span>
+              <span>B</span>
+            </h3>
+            <ul>
+              <li>
+                <b>A pure domain</b>
+                <code>domain</code> knows nothing of <code>tokio</code> or <code>ratatui</code>; its
+                one dependency is <code>thiserror</code>.
+              </li>
+              <li>
+                <b>One door to the protocol</b>Only <code>telegram-framework</code> may name a{' '}
+                <code>grammers</code> type.
+              </li>
+              <li>
+                <b>No plaintext session</b>The OS credential store, or an encrypted file.
+              </li>
+            </ul>
+          </div>
+          <div className="fp-project-brief-col fp-project-brief-col-excluded">
+            <h3>
+              <span>Left out on purpose</span>
+              <span>C</span>
+            </h3>
+            <ul>
+              <li>
+                <b>Channels</b>Unwanted clutter.
+              </li>
+              <li>
+                <b>An arena allocator</b>Named in the goals, dropped after measurement. See D-04.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="mt-12 border-t border-[var(--line)] pt-8">
         <p className="fp-meta">01 · Hardest problem</p>
         <h2 className="mt-3 text-2xl font-medium">Right-to-left text in a terminal</h2>
@@ -237,15 +305,6 @@ export default function TelevimPage() {
         </p>
       </section>
 
-      <section className="mt-12 border-t border-[var(--line)] pt-8">
-        <p className="fp-meta">02 · Design constraints</p>
-        <ul className="mt-4 list-disc space-y-2 pl-5">
-          <li>Keep conversation data private and local.</li>
-          <li>Make message reading and replies work from the keyboard.</li>
-          <li>Keep the domain crate independent of terminal and network details.</li>
-          <li>Enforce a memory budget in continuous integration.</li>
-        </ul>
-      </section>
     </article>
   )
 }
