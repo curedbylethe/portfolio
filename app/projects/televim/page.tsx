@@ -18,7 +18,9 @@ export default function TelevimPage() {
       <section className="fp-project-hero">
         <div className="fp-project-hero-text">
           <p className="fp-meta fp-project-kicker">Dossier 01 / Terminal application</p>
-          <h1 className="fp-project-title">Televim</h1>
+          <h1 id="d-title" className="fp-project-title">
+            Televim
+          </h1>
           <p className="fp-project-headline">Telegram, without leaving your terminal.</p>
           <p className="fp-project-lede">
             Read and answer your Telegram messages in a terminal window, using only the keyboard.
@@ -62,6 +64,80 @@ export default function TelevimPage() {
           </dl>
         </aside>
       </section>
+
+      <nav className="fp-project-toc" aria-label="Dossier contents">
+        <div>
+          <h2>Act I · Discover · 1 min</h2>
+          <ol>
+            <li>
+              <a href="#d-title">
+                <span>The object</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">01</span>
+              </a>
+            </li>
+            <li>
+              <a href="#s02">
+                <span>Origin</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">02</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h2>Act II · Dissect · 6 min</h2>
+          <ol>
+            <li>
+              <a href="#s03">
+                <span>The brief</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">03</span>
+              </a>
+            </li>
+            <li>
+              <a href="#s04">
+                <span>A keystroke, layer by layer</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">04</span>
+              </a>
+            </li>
+            <li>
+              <a href="#s05">
+                <span>Featured challenge</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">05</span>
+              </a>
+            </li>
+            <li>
+              <a href="#s06">
+                <span>Decision records</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">06</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h2>Act III · Reflect · 3 min</h2>
+          <ol>
+            <li>
+              <a href="#s07">
+                <span>Evidence</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">07</span>
+              </a>
+            </li>
+            <li>
+              <a href="#s08">
+                <span>Retrospective</span>
+                <span className="fp-project-toc-lead" aria-hidden="true" />
+                <span className="fp-project-toc-number">08</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       <section className="mt-12 border-t border-[var(--line)] pt-8">
         <p className="fp-meta">01 · Hardest problem</p>
