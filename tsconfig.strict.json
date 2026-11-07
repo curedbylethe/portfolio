@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "composite": false,
+    "incremental": false
+  },
+  "include": [
+    "next-env.d.ts",
+    "components/flow-board/**/*",
+    "data/projects/**/*",
+    "app/projects/televim/TelevimArchitecture.tsx"
+  ]
+}

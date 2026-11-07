@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { genPageMetadata } from 'app/seo'
 import InstallCommand from '@/components/InstallCommand'
+import TelevimArchitecture from './TelevimArchitecture'
 
 export const metadata = genPageMetadata({
   title: 'Televim',
@@ -167,8 +168,8 @@ export default function TelevimPage() {
               </p>
               <p>
                 I missed Vim&apos;s editing model, too. Fixing a typo three lines up or replacing a
-                word throughout a message shouldn&apos;t require a series of clicks. I wanted the same
-                speed and control over my conversations that I had over my code.
+                word throughout a message shouldn&apos;t require a series of clicks. I wanted the
+                same speed and control over my conversations that I had over my code.
               </p>
               <h4>Design constraints</h4>
               <ul>
@@ -311,6 +312,7 @@ export default function TelevimPage() {
           in order; the list says what each one does with it. Arrows on the map are dependencies,
           not calls.
         </p>
+        <TelevimArchitecture />
       </section>
 
       <section className="mt-12 border-t border-[var(--line)] pt-8">
@@ -347,7 +349,6 @@ export default function TelevimPage() {
           drawn to scale. None is a connected session under load.
         </p>
       </section>
-
     </article>
   )
 }
