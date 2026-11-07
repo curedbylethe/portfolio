@@ -848,6 +848,13 @@ export default function TelevimPage() {
           </aside>
         </div>
       </section>
+
+      <nav className="fp-project-pager" aria-label="Dossiers">
+        <Link href="/projects">
+          <span>← Back to</span>
+          <span className="fp-project-pager-title">Catalogue</span>
+        </Link>
+      </nav>
     </article>
   )
 }
