@@ -182,6 +182,13 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-back { font: 400 13px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .fp-project-hero { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; align-items: start; padding-block: 32px 48px; }
 .fp-project-hero-text { grid-column: 1 / span 6; display: grid; align-content: start; gap: 16px; }
+.fp-project-kicker { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.fp-project-kicker::before { content: ''; width: 24px; height: 24px; flex: none; clip-path: polygon(50% 0%, 61.2% 34.5%, 97.6% 34.5%, 68.2% 55.9%, 79.4% 90.5%, 50% 69.1%, 20.6% 90.5%, 31.8% 55.9%, 2.4% 34.5%, 38.8% 34.5%); background-color: color-mix(in oklch, var(--accent) 90%, var(--bg)); background-image: repeating-linear-gradient(8deg, transparent 0 2px, color-mix(in oklch, var(--bg) 22%, transparent) 2px 3px, transparent 3px 5px), repeating-linear-gradient(97deg, transparent 0 3px, color-mix(in oklch, var(--bg) 15%, transparent) 3px 4px, transparent 4px 7px); }
+.fp-project-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.fp-project-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border: 1px solid transparent; font: 500 15px/1.55 var(--font-body); letter-spacing: .02em; text-decoration: none; }
+.fp-project-button-primary { background: var(--onyx); color: var(--bone); }
+.fp-project-button-secondary { border-color: var(--onyx); color: var(--onyx); }
+.fp-project-button:hover { opacity: .8; }
 .fp-project-hero-side { grid-column: 8 / span 5; display: grid; align-content: start; gap: 24px; }
 .fp-install-window { position: relative; isolation: isolate; margin: 0; overflow: hidden; border: 1px solid var(--charcoal); background: var(--onyx); color: var(--bone); font: 400 clamp(.8125rem, .79rem + .16vw, .9375rem)/1.7 var(--font-mono); font-variant-ligatures: none; }
 .fp-install-window::after { content: ''; position: absolute; z-index: 2; inset: 0; pointer-events: none; background: repeating-linear-gradient(to bottom, color-mix(in srgb, var(--bone) 3%, transparent) 0 1px, transparent 1px 4px); }
