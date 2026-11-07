@@ -198,8 +198,10 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-install-scroll { overflow-x: auto; overscroll-behavior-x: contain; padding: 16px 16px 24px; scrollbar-color: var(--charcoal) transparent; scrollbar-width: thin; }
 .fp-install-scroll pre { max-width: 100%; margin: 0; padding: 0; border: 0; background: none; font: inherit; white-space: pre; }
 .fp-install-prompt { color: var(--accent); user-select: none; }
-.fp-project-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; margin: 0; }
-.fp-project-meta > div { display: grid; align-content: start; gap: 4px; }
+.fp-project-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; margin: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line-faint); }
+.fp-project-meta > div { display: grid; align-content: start; gap: 4px; padding-block: 16px; }
+.fp-project-meta dt { color: var(--text-muted); font: 400 clamp(.75rem, .73rem + .1vw, .8125rem)/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-meta dd { margin: 0; font-size: clamp(.9375rem, .91rem + .14vw, 1rem); line-height: 1.4; text-wrap: pretty; }
 .fp-project-headline { font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem); font-weight: 500; line-height: 1.15; }
 .fp-project-lede { max-width: 48ch; color: var(--text-muted); line-height: 1.55; }
 @media (max-width: 1023px) {
