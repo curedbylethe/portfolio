@@ -178,6 +178,8 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
   .fp-project-index { font-size: clamp(2rem, 1.55rem + 2.2vw, 3.25rem); }
 }
 .fp-article { width: min(100%, 62ch); padding-block: 64px 96px; }
+.fp-project-dossier { padding-top: 16px; }
+.fp-project-back { font: 400 13px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .fp-article-heading { padding: 0; }
 .fp-detail-back { display: inline-flex; min-height: 44px; align-items: center; color: var(--text); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
 .fp-detail-back:hover { text-decoration-color: var(--accent); }

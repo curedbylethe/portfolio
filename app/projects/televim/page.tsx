@@ -9,9 +9,9 @@ export const metadata = genPageMetadata({
 
 export default function TelevimPage() {
   return (
-    <article className="fp-article fp-detail">
-      <Link href="/projects" className="fp-detail-back">
-        ← Projects
+    <article className="fp-article fp-detail fp-project-dossier">
+      <Link href="/projects" className="fp-detail-back fp-project-back">
+        ← Catalogue
       </Link>
 
       <header className="mt-8 border-b border-[var(--line)] pb-8">
