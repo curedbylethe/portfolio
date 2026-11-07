@@ -1,7 +1,51 @@
 import Link from 'next/link'
 import { genPageMetadata } from 'app/seo'
 import InstallCommand from '@/components/InstallCommand'
+import Progress, { type ProgressItem } from '@/components/Progress'
 import TelevimArchitecture from './TelevimArchitecture'
+
+const evidence: ProgressItem[] = [
+  {
+    label: 'Idle memory',
+    detail: 'Shipped binary, sealed 60-chat cache drawn offline; 125 samples, 4.23–9.34 MB',
+    value: '7.55 MB',
+    context: 'of 50 MB',
+    progress: 15.1,
+  },
+  {
+    label: 'Startup',
+    detail: 'Launch to the empty sign-in frame; run medians 1.58–9.59 ms',
+    value: '2.577 ms',
+    context: 'of 500 ms',
+    progress: 0.5154,
+  },
+  {
+    label: 'Input latency',
+    detail: 'Key to drawn frame, shipped binary',
+    value: '0.132 ms',
+    context: 'of 16 ms',
+    progress: 0.825,
+  },
+  {
+    label: 'Binary size',
+    detail: 'Stripped release, 6,488,432 bytes',
+    value: '6.49 MB',
+    context: 'of 15 MB',
+    progress: 43.2667,
+  },
+  {
+    label: 'Vim fidelity',
+    detail: 'Target: 95% of common motions. PTY tests reach a subset.',
+    value: 'Partly covered',
+    context: 'no figure',
+  },
+  {
+    label: 'Protocol',
+    detail: 'Target: sign in, list chats, send and receive against a test datacenter',
+    value: 'Exercised',
+    context: 'no pass record here',
+  },
+]
 
 export const metadata = genPageMetadata({
   title: 'Televim',
@@ -348,6 +392,30 @@ export default function TelevimPage() {
           The acceptance criteria from <code>product.md</code>, each against what was measured,
           drawn to scale. None is a connected session under load.
         </p>
+        <div className="fp-project-evidence">
+          <Progress items={evidence} />
+          <aside className="fp-project-evidence-side" aria-label="Measurement context and limits">
+            <dl className="fp-project-evidence-context">
+              <dt>Taken</dt>
+              <dd>16 Oct 2026, on the <code>0.5.0</code> tree</dd>
+              <dt>Host</dt>
+              <dd>Darwin arm64, one machine</dd>
+              <dt>Method</dt>
+              <dd>Median of five make measure reports, each a median of five launches</dd>
+              <dt>Record</dt>
+              <dd>memory.md ↗</dd>
+            </dl>
+            <div className="fp-project-evidence-limits">
+              <span>What these figures do not show</span>
+              <ul>
+                <li>A connected session with fetched history.</li>
+                <li>End-to-end latency: the terminal’s read and paint sit outside the probe.</li>
+                <li>Linux or Windows.</li>
+                <li>The 20–30 MB stretch band: not attempted. Falling below it is not meeting it.</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
       </section>
     </article>
   )

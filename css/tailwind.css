@@ -211,6 +211,22 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-act + .fp-project-dsec,
 .fp-project-dsec + .fp-project-dsec { padding-top: 64px; scroll-margin-top: 24px; }
 .fp-project-dsec-intro { max-width: 44ch; margin: 0 0 48px; font-size: 18px; line-height: 1.55; }
+.fp-project-evidence { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 48px; }
+.fp-progress { grid-column: 1 / span 8; align-self: start; margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--text); }
+.fp-progress-item { display: grid; grid-template-columns: minmax(0, 1fr) 136px; gap: 8px 24px; margin: 0; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.fp-progress-label { font-size: 16px; line-height: 1.55; }
+.fp-progress-label small { display: block; margin-top: 2px; color: var(--text-muted); font-size: 13px; line-height: 1.55; }
+.fp-progress-value { text-align: right; font: 400 18px/1.55 var(--font-mono); }
+.fp-progress-value small { display: block; color: var(--text-muted); font: 400 13px/1.55 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-progress-track { position: relative; grid-column: 1 / -1; display: block; height: 12px; border: 1px solid var(--charcoal); }
+.fp-progress-bar { position: absolute; inset: 0 auto 0 0; display: block; min-width: 2px; height: 10px; background: var(--text); }
+.fp-project-evidence-side { grid-column: 9 / span 4; display: grid; align-content: start; gap: 32px; }
+.fp-project-evidence-context { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 16px; margin: 0; padding-top: 12px; border-top: 2px solid var(--text); font-size: 16px; line-height: 1.55; }
+.fp-project-evidence-context dt { padding-top: 2px; color: var(--text-muted); font: 400 13px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-evidence-context dd { margin: 0; }
+.fp-project-evidence-limits { display: grid; gap: 12px; padding: 16px; border: 1px solid var(--charcoal); }
+.fp-project-evidence-limits > span { font: 400 13px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-evidence-limits ul { display: grid; gap: 8px; margin: 0; padding-left: 17.6px; font-size: 16px; line-height: 1.55; }
 .fp-project-brief { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; }
 .fp-project-brief-col { display: grid; align-content: start; gap: 12px; }
 .fp-project-brief-col h3 { display: flex; justify-content: space-between; gap: 12px; margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--text); font: 500 clamp(.75rem, .73rem + .1vw, .8125rem)/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
@@ -276,6 +292,9 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
   .fp-project-section-number { grid-column: 1; grid-row: 1 / span 2; }
   .fp-project-section-title, .fp-project-section-read { grid-column: 2; }
   .fp-project-section-read { justify-self: start; text-align: left; }
+  .fp-project-evidence { grid-template-columns: 1fr; }
+  .fp-progress, .fp-project-evidence-side { grid-column: 1; }
+  .fp-progress-item { grid-template-columns: minmax(0, 1fr) max-content; }
 }
 
 /* FlowBoard: read-only architecture explorer (components/flow-board). Portfolio tokens only. */
