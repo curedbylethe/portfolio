@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { genPageMetadata } from 'app/seo'
 import InstallCommand from '@/components/InstallCommand'
 import Progress, { type ProgressItem } from '@/components/Progress'
+import CaseStudy from '@/components/CaseStudy'
 import TelevimArchitecture from './TelevimArchitecture'
 
 const evidence: ProgressItem[] = [
@@ -359,14 +360,288 @@ export default function TelevimPage() {
         <TelevimArchitecture />
       </section>
 
-      <section className="mt-12 border-t border-[var(--line)] pt-8">
-        <p className="fp-meta">01 · Hardest problem</p>
-        <h2 className="mt-3 text-2xl font-medium">Right-to-left text in a terminal</h2>
-        <p className="mt-4">
-          Arabic and Persian text must stay readable inside a keyboard-driven interface. Televim
-          treats bidirectional text as a core layout constraint, so message content and terminal
-          navigation remain usable together.
-        </p>
+      <section id="s05" className="fp-project-dsec" aria-labelledby="s05-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            05
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act II · Featured challenge</span>
+            <h2 id="s05-h">The hardest problem</h2>
+          </div>
+          <p className="fp-project-section-read">3 min</p>
+        </header>
+        <CaseStudy
+          id="rtl-case"
+          label="Case study · text"
+          title="Right-to-left text in a terminal"
+          sources="decisions.md, known-gaps.md"
+          status="Shipped, with named limits"
+          stations={[
+            {
+              title: 'Problem',
+              content: (
+                <>
+                  <p className="fp-project-case-lede">
+                    Arabic, Hebrew and Persian read right to left. In a terminal, nobody agrees who
+                    should reverse them.
+                  </p>
+                  <p>
+                    No mainstream terminal applies the Unicode Bidirectional Algorithm by default.
+                    Yet every terminal that draws these scripts at all runs a shaper, and shaping
+                    reverses right-to-left runs on its own.
+                  </p>
+                </>
+              ),
+            },
+            {
+              title: 'What you see',
+              content: (
+                <>
+                  <p>
+                    A two-word Arabic draft, sent to kitty 0.49.2 in logical order. Each word reads
+                    correctly. The words are in the wrong order.
+                  </p>
+                  <figure className="fp-project-case-exhibit">
+                    <div className="fp-project-exhibit-bar">
+                      <span>Plate 4 · Reading order</span>
+                      <span>Conceptual drawing</span>
+                    </div>
+                    <div className="fp-project-wordlines">
+                      <div>
+                        <span>A reader expects</span>
+                        <b>
+                          word 2 <i>←</i>
+                        </b>
+                        <b>
+                          word 1 <i>←</i>
+                        </b>
+                      </div>
+                      <div>
+                        <span>kitty shows</span>
+                        <b>
+                          word 1 <i>←</i>
+                        </b>
+                        <b>
+                          word 2 <i>←</i>
+                        </b>
+                      </div>
+                    </div>
+                    <figcaption>
+                      <b>Drawn, not captured.</b> The shaper reverses each right-to-left run
+                      separately, and a space ends a run, so the first word lands on the left.
+                      Arrows show the direction the letters read.
+                    </figcaption>
+                  </figure>
+                </>
+              ),
+            },
+            {
+              title: 'Constraints',
+              content: (
+                <ul>
+                  <li>
+                    <b>The shaper is outside the program.</b> HarfBuzz, CoreText, DirectWrite and
+                    Pango reverse runs whatever Televim emits.
+                  </li>
+                  <li>
+                    <b>The terminal cannot be detected.</b> Bidi and shaping are settings, not
+                    identity, and no probe of the far end survives tmux or ssh.
+                  </li>
+                  <li>
+                    <b>Tests cannot see the result.</b> <code>ratatui</code>’s test backend has no
+                    bidi and no shaper: it proves which cells were written, not how they were drawn.
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              title: 'Alternatives',
+              content: (
+                <>
+                  <p>
+                    Three ways to emit a line, on two kinds of terminal. Each verdict carries a word
+                    as well as a fill.
+                  </p>
+                  <div
+                    className="fp-project-case-matrix"
+                    role="table"
+                    aria-label="Emission mode against terminal kind"
+                  >
+                    <div role="row" className="fp-project-case-matrix-head">
+                      <span role="columnheader">Mode</span>
+                      <span role="columnheader">
+                        Shaping terminals
+                        <br />
+                        kitty, wezterm, foot, iTerm2, VTE
+                      </span>
+                      <span role="columnheader">
+                        Non-shaping terminals
+                        <br />
+                        xterm, alacritty
+                      </span>
+                    </div>
+                    <div role="row">
+                      <span
+                        role="rowheader"
+                        className="fp-project-case-mode fp-project-case-chosen"
+                      >
+                        Terminal<small>logical order · default</small>
+                      </span>
+                      <span
+                        role="cell"
+                        data-col="Shaping terminals"
+                        className="fp-project-case-verdict is-part"
+                      >
+                        <b>Partly</b>One word reads right; on kitty, several words come out in the
+                        wrong order.
+                      </span>
+                      <span
+                        role="cell"
+                        data-col="Non-shaping terminals"
+                        className="fp-project-case-verdict is-no"
+                      >
+                        <b>Wrong</b>Nothing reverses the run.
+                      </span>
+                    </div>
+                    <div role="row">
+                      <span role="rowheader" className="fp-project-case-mode">
+                        Visual<small>Televim reorders · opt-in</small>
+                      </span>
+                      <span
+                        role="cell"
+                        data-col="Shaping terminals"
+                        className="fp-project-case-verdict is-no"
+                      >
+                        <b>Wrong</b>Reversed twice, once by Televim and once by the shaper.
+                      </span>
+                      <span
+                        role="cell"
+                        data-col="Non-shaping terminals"
+                        className="fp-project-case-verdict is-yes"
+                      >
+                        <b>Reads right</b>Correct order; Arabic and Persian letters are not joined.
+                      </span>
+                    </div>
+                    <div role="row">
+                      <span role="rowheader" className="fp-project-case-mode">
+                        Words<small>word order only · opt-in</small>
+                      </span>
+                      <span
+                        role="cell"
+                        data-col="Shaping terminals"
+                        className="fp-project-case-verdict is-yes"
+                      >
+                        <b>Reads right</b>On kitty: words reversed, letters left to the shaper.
+                      </span>
+                      <span
+                        role="cell"
+                        data-col="Non-shaping terminals"
+                        className="fp-project-case-verdict is-none"
+                      >
+                        <b>Not recorded</b>The docs do not state this case.
+                      </span>
+                    </div>
+                  </div>
+                  <p>
+                    A fourth option, detecting the terminal and choosing for it, was rejected for
+                    the reason in station 3.
+                  </p>
+                </>
+              ),
+            },
+            {
+              title: 'Implementation',
+              content: (
+                <>
+                  <p>
+                    The default stays logical order, byte for byte what the binary already emitted,
+                    because it is right on every terminal that shapes. The other two modes are one
+                    configuration key for the whole machine, not per terminal, so an ssh hop keeps
+                    the setting it was launched with.
+                  </p>
+                  <figure className="fp-project-case-code">
+                    <figcaption>
+                      <span>televim.toml · on xterm or alacritty</span>
+                      <span>toml</span>
+                    </figcaption>
+                    <pre>
+                      <code>
+                        bidi = "visual" <span># or TELEVIM_BIDI=visual</span>
+                      </code>
+                    </pre>
+                  </figure>
+                  <p>
+                    Underneath, <code>tui/src/bidi.rs</code> decides which way a message reads and
+                    which logical ranges each wrapped row draws. A zero-width non-joiner counts as a
+                    word break and a row break, so a Persian compound such as{' '}
+                    <bdi lang="fa">کتاب‌ها</bdi> wraps where a reader hears two words.
+                  </p>
+                </>
+              ),
+            },
+            {
+              title: 'Evidence',
+              content: (
+                <ul className="fp-project-case-evidence">
+                  <li>
+                    <span>Observed</span>
+                    <span>
+                      kitty 0.49.2, captured by <code>scripts/rtl/kitty_shots.py</code>: the per-run
+                      reversal behind station 2.
+                    </span>
+                  </li>
+                  <li>
+                    <span>Automated</span>
+                    <span>
+                      <code>make test</code> pins the width it rests on: <code>columns("لا")</code>{' '}
+                      is 1, <code>drawn_cells("لا")</code> is 2.
+                    </span>
+                  </li>
+                  <li>
+                    <span>Automated</span>
+                    <span>
+                      A wrap property, “a row is never cut inside a cluster”, runs with zero-width
+                      non-joiner texts in its loop.
+                    </span>
+                  </li>
+                  <li>
+                    <span>Manual</span>
+                    <span>
+                      <code>make rtl-shots</code>, outside <code>make ci</code> and without
+                      assertions: a person reads a scene for the last letter and the clock beside
+                      it.
+                    </span>
+                  </li>
+                </ul>
+              ),
+            },
+            {
+              title: 'Still open',
+              content: (
+                <>
+                  <ul>
+                    <li>
+                      xterm and alacritty render right-to-left text wrong in the default mode.
+                    </li>
+                    <li>
+                      In Visual mode, Arabic and Persian letters are not contextually joined. That
+                      needs a shaping library.
+                    </li>
+                    <li>Brackets are not mirrored inside a right-to-left run.</li>
+                    <li>The default mode’s correctness cannot be proved inside the repository.</li>
+                  </ul>
+                  <a
+                    className="fp-project-case-link"
+                    href="https://github.com/curedbylethe/televim/blob/main/docs/known-gaps.md"
+                  >
+                    known-gaps.md ↗
+                  </a>
+                </>
+              ),
+            },
+          ]}
+        />
       </section>
 
       <header id="act-3" className="fp-project-act">
@@ -397,7 +672,9 @@ export default function TelevimPage() {
           <aside className="fp-project-evidence-side" aria-label="Measurement context and limits">
             <dl className="fp-project-evidence-context">
               <dt>Taken</dt>
-              <dd>16 Oct 2026, on the <code>0.5.0</code> tree</dd>
+              <dd>
+                16 Oct 2026, on the <code>0.5.0</code> tree
+              </dd>
               <dt>Host</dt>
               <dd>Darwin arm64, one machine</dd>
               <dt>Method</dt>
@@ -411,7 +688,9 @@ export default function TelevimPage() {
                 <li>A connected session with fetched history.</li>
                 <li>End-to-end latency: the terminal’s read and paint sit outside the probe.</li>
                 <li>Linux or Windows.</li>
-                <li>The 20–30 MB stretch band: not attempted. Falling below it is not meeting it.</li>
+                <li>
+                  The 20–30 MB stretch band: not attempted. Falling below it is not meeting it.
+                </li>
               </ul>
             </div>
           </aside>
