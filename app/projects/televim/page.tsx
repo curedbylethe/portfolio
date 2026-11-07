@@ -156,6 +156,47 @@ export default function TelevimPage() {
             <br />
             <span className="fp-project-origin-source">Product goal 2, docs/product.md</span>
           </blockquote>
+          <div className="fp-project-origin-prose">
+            <div className="fp-project-author-note">
+              <span>WHY I BUILT IT</span>
+              <p>
+                Telegram was always open while I worked, both for conversations with coworkers and
+                for keeping notes. With Docker containers, browser tabs, and AI agents already
+                competing for resources, its graphical client felt like an unnecessary expense and
+                another source of distraction. I was already using Helix in the terminal, so
+                bringing Telegram there seemed like the obvious choice.
+              </p>
+              <p>
+                I also missed Vim&apos;s editing model. Fixing a typo three lines up or replacing a
+                word throughout a long message shouldn&apos;t require reaching for the mouse. I wanted
+                the same speed and control over conversations that I had over code.
+              </p>
+              <p>
+                I started with private chats, leaving out groups and channels because I rarely
+                needed them. That&apos;s changing as more of my open-source work happens in Telegram
+                groups. Media was a firmer decision: stickers are welcome, but images and videos
+                belong in external viewers. I wasn&apos;t trying to recreate Telegram&apos;s desktop client
+                inside a terminal.
+              </p>
+              <ul>
+                <li>
+                  Keyboard first. Navigation and editing should remain usable without a mouse.
+                </li>
+                <li>
+                  Keep the client small. Avoid competing with the development environment for
+                  resources.
+                </li>
+                <li>
+                  Delegate, don&apos;t duplicate. Let dedicated applications handle media playback and
+                  viewing.
+                </li>
+                <li>
+                  Scope follows actual use. Features earn their place through practical needs, not
+                  parity with Telegram&apos;s desktop client.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
