@@ -849,6 +849,68 @@ export default function TelevimPage() {
         </div>
       </section>
 
+      <section id="s08" className="fp-project-dsec" aria-labelledby="s08-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            08
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act III · Retrospective</span>
+            <h2 id="s08-h">Looking back</h2>
+          </div>
+          <p className="fp-project-section-read">1 min</p>
+        </header>
+        <div className="fp-project-retro">
+          <div className="fp-project-retro-col">
+            <h3>From the record</h3>
+            <div className="fp-project-retro-item">
+              <h4>What held</h4>
+              <p>
+                The architecture rule is mechanical: a build fails when it breaks. Goals were tested
+                rather than assumed, and one was dropped on the evidence.
+              </p>
+            </div>
+            <div className="fp-project-retro-item">
+              <h4>What stayed hard</h4>
+              <p>Right-to-left text. Four of the open gaps are bidi; see the featured challenge.</p>
+            </div>
+            <div className="fp-project-retro-item">
+              <h4>Not yet known</h4>
+              <p>How much memory a connected session holds after fetching real history.</p>
+            </div>
+          </div>
+          <div className="fp-project-retro-col">
+            <h3>Author’s account · to be written</h3>
+            <div className="fp-project-retro-item">
+              <h4>What worked</h4>
+              <p className="is-placeholder">In your words. One paragraph.</p>
+            </div>
+            <div className="fp-project-retro-item">
+              <h4>What was harder than expected</h4>
+              <p className="is-placeholder">In your words. One paragraph.</p>
+            </div>
+            <div className="fp-project-retro-item">
+              <h4>Started again today, what would change</h4>
+              <p className="is-placeholder">In your words. One paragraph.</p>
+            </div>
+          </div>
+          <ul className="fp-project-retro-open" aria-label="Unfinished, from known-gaps.md">
+            <li>
+              <span>Open · </span>Global search has no sender filter.
+            </li>
+            <li>
+              <span>Open · </span>One account is open per process.
+            </li>
+            <li>
+              <span>Open · </span>Release binaries are unsigned and not notarized.
+            </li>
+            <li>
+              <span>Deferred · </span>Sending stickers, and the sticker picker.
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <nav className="fp-project-pager" aria-label="Dossiers">
         <Link href="/projects">
           <span>← Back to</span>
