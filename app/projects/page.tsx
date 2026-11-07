@@ -15,18 +15,12 @@ export default function Projects() {
           <span className="fp-section-num">01</span>
           <h1 className="fp-page-title">Projects</h1>
         </div>
-        <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
-              />
+        <div className="fp-project-catalog">
+          <ol className="fp-projects" aria-label="Project dossiers">
+            {projectsData.map((project, index) => (
+              <Card key={project.title} project={project} index={index + 1} />
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </>

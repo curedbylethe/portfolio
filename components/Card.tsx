@@ -1,56 +1,47 @@
 import Image from './Image'
 import Link from './Link'
+import type { Project } from '@/data/projectsData'
 
-const Card = ({ title, description, imgSrc, href }) => (
-  <div className="md max-w-[544px] p-4 md:w-1/2">
-    <div
-      className={`${
-        imgSrc && 'h-full'
-      } overflow-hidden rounded-md border-2 border-gray-200/60 dark:border-gray-700/60`}
-    >
-      {imgSrc &&
-        (href ? (
-          <Link href={href} aria-label={`Link to ${title}`}>
-            <Image
-              alt={title}
-              src={imgSrc}
-              className="object-cover object-center md:h-36 lg:h-48"
-              width={544}
-              height={306}
-            />
-          </Link>
-        ) : (
-          <Image
-            alt={title}
-            src={imgSrc}
-            className="object-cover object-center md:h-36 lg:h-48"
-            width={544}
-            height={306}
-          />
-        ))}
-      <div className="p-6">
-        <h2 className="mb-3 text-2xl leading-8 font-bold tracking-tight">
-          {href ? (
-            <Link href={href} aria-label={`Link to ${title}`}>
-              {title}
-            </Link>
-          ) : (
-            title
-          )}
-        </h2>
-        <p className="prose mb-3 max-w-none text-[var(--text-muted)]">{description}</p>
-        {href && (
-          <Link
-            href={href}
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 text-base leading-6 font-medium"
-            aria-label={`Link to ${title}`}
-          >
-            Learn more &rarr;
-          </Link>
-        )}
+interface CardProps {
+  project: Project
+  index: number
+}
+
+const Card = ({ project, index }: CardProps) => (
+  <li className="fp-project-card">
+    <span className="fp-project-index" aria-hidden="true">
+      {String(index).padStart(2, '0')}
+    </span>
+    <figure className="fp-project-plate">
+      <div className="fp-project-image">
+        <Link href={project.href} tabIndex={-1} aria-hidden="true">
+          <Image src={project.image.src} alt={project.image.alt} width={1362} height={761} />
+        </Link>
       </div>
+      <figcaption>{project.image.caption}</figcaption>
+    </figure>
+    <div className="fp-project-info">
+      <span className="fp-meta">{project.eyebrow}</span>
+      <h2>
+        <Link href={project.href}>{project.title}</Link>
+      </h2>
+      <p className="fp-project-purpose">{project.purpose}</p>
+      <p className="fp-project-description">{project.description}</p>
+      <dl>
+        {project.info.flatMap(({ label, value }) => [
+          <dt key={`${label}-label`}>{label}</dt>,
+          <dd key={`${label}-value`}>{value}</dd>,
+        ])}
+      </dl>
+      <ul className="fp-project-tags" aria-label="Project tags">
+        {project.tags.map((tag) => (
+          <li key={tag} className="fp-tag">
+            {tag}
+          </li>
+        ))}
+      </ul>
     </div>
-  </div>
+  </li>
 )
 
 export default Card
