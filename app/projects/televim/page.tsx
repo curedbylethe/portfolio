@@ -3,6 +3,7 @@ import { genPageMetadata } from 'app/seo'
 import InstallCommand from '@/components/InstallCommand'
 import Progress, { type ProgressItem } from '@/components/Progress'
 import CaseStudy from '@/components/CaseStudy'
+import DecisionRecord from '@/components/DecisionRecord'
 import TelevimArchitecture from './TelevimArchitecture'
 
 const evidence: ProgressItem[] = [
@@ -642,6 +643,157 @@ export default function TelevimPage() {
             },
           ]}
         />
+      </section>
+
+      <section id="s06" className="fp-project-dsec" aria-labelledby="s06-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            06
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act II · Decision records</span>
+            <h2 id="s06-h">Four more choices</h2>
+          </div>
+          <p className="fp-project-section-read">1–4 min</p>
+        </header>
+        <p className="fp-project-dsec-intro">
+          Each line is the choice and its cost. Open one for the problem, the options and the quoted
+          reasoning.
+        </p>
+        <div className="fp-project-records">
+          <DecisionRecord
+            id="D-01"
+            title="One crate is the only door to the protocol"
+            choice="a first-party wrapper."
+            cost="code to own and keep current."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>
+                Once a protocol type reaches the UI, every library change becomes a UI change, on
+                someone else’s release cadence.
+              </dd>
+              <dt>Considered</dt>
+              <dd>
+                <ol className="fp-project-options">
+                  <li>
+                    <code>ferogram</code>, an existing wrapper with a small contributor base that
+                    pins <code>grammers</code> revisions.
+                  </li>
+                  <li className="is-chosen">
+                    A first-party wrapper, <code>telegram-framework</code>.
+                  </li>
+                </ol>
+              </dd>
+              <dt>Consequence</dt>
+              <dd>
+                <code>proto</code>, <code>domain</code> and <code>tui</code> never see a{' '}
+                <code>grammers</code> type, and <code>make boundary</code> proves it on every CI
+                run.
+              </dd>
+            </dl>
+            <blockquote className="fp-project-record-quote">
+              “By writing our own thin wrapper over <code>grammers-client</code>, we own the
+              abstraction, keep the dependency surface minimal, and can tailor the API exactly to{' '}
+              <code>televim</code>’s needs.”
+            </blockquote>
+            <a
+              className="fp-project-record-source"
+              href="https://github.com/curedbylethe/televim/blob/main/docs/decisions.md"
+            >
+              decisions.md ↗
+            </a>
+          </DecisionRecord>
+          <DecisionRecord
+            id="D-02"
+            title="The session is always sealed, and written whole"
+            choice="encryption on every write, no plaintext fallback."
+            cost="no key, no session; a lost passphrase stays lost."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>
+                A session file is a permanent authorisation key. A plain overwrite can leave a
+                truncated file; a plaintext copy is an exposure.
+              </dd>
+              <dt>Considered</dt>
+              <dd>
+                <ol className="fp-project-options">
+                  <li>
+                    An <code>encrypt_session</code> switch, or an encrypting wrapper over the file
+                    store.
+                  </li>
+                  <li className="is-chosen">
+                    Seal every write. Key from the environment first, the OS keyring second, nowhere
+                    else.
+                  </li>
+                </ol>
+              </dd>
+              <dt>Consequence</dt>
+              <dd>
+                Writes go to a sibling temp file restricted to <code>0600</code>, then rename over
+                the target. A kill mid-write leaves the previous session or none, never a partial
+                one.
+              </dd>
+            </dl>
+            <blockquote className="fp-project-record-quote">
+              “A switch would be a second, plaintext write path, which is the exposure the envelope
+              exists to close […] There is no plaintext fallback.”
+            </blockquote>
+            <a
+              className="fp-project-record-source"
+              href="https://github.com/curedbylethe/televim/blob/main/docs/decisions.md"
+            >
+              decisions.md ↗
+            </a>
+          </DecisionRecord>
+          <DecisionRecord
+            id="D-03"
+            title="Private conversations, and nothing else"
+            choice="one-to-one chats only."
+            cost="people whose Telegram lives in groups are not served."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>
+                Groups, channels and bots multiply the state a terminal client has to hold, filter
+                and draw.
+              </dd>
+              <dt>Consequence</dt>
+              <dd>
+                The filter sits in the protocol wrapper, so nothing else reaches the domain or the
+                screen. A bot’s direct messages are searched but not shown.
+              </dd>
+            </dl>
+            <blockquote className="fp-project-record-quote">
+              “This scope drastically reduces the state surface and memory footprint.”{' '}
+              <span>product.md, goal 3</span>
+            </blockquote>
+          </DecisionRecord>
+          <DecisionRecord
+            id="D-04"
+            title="No arena allocator, by measurement"
+            choice="the system allocator."
+            cost="a stated goal not met as written."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>The original goals named an arena allocator as a route to the memory ceiling.</dd>
+              <dt>Consequence</dt>
+              <dd>
+                Per-frame allocations die with the frame. Resident memory is held by the message
+                window, the chat list and the terminal buffers, which an arena cannot lower. A frame
+                cost 0.518 ms against a 16 ms budget when this was decided.
+              </dd>
+            </dl>
+            <a
+              className="fp-project-record-source"
+              href="https://github.com/curedbylethe/televim/blob/main/docs/decisions.md"
+            >
+              decisions.md ↗
+            </a>
+          </DecisionRecord>
+        </div>
       </section>
 
       <header id="act-3" className="fp-project-act">
