@@ -335,7 +335,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fb-node[aria-pressed='true'] small { color: color-mix(in srgb, var(--bg) 80%, var(--text)); }
 .fb-node--dashed { border-width: 1px; border-style: dashed; }
 .fb-node.is-off { opacity: .35; }
-.fb-badge { position: absolute; top: -12px; right: -10px; min-width: 24px; height: 24px; display: grid; place-items: center; padding: 0 4px; border: 2px solid var(--bg); background: var(--text); color: var(--bg); font: 500 12px/1 var(--font-mono); }
+.fb-badge { position: absolute; top: -12px; right: -10px; min-width: 24px; height: 24px; display: grid; place-items: center; padding: 0 4px; border: 2px solid var(--bg); background: var(--text); color: var(--bg); font: 500 16px/1 var(--font-mono); }
 .fb-node[aria-pressed='true'] .fb-badge { border-color: var(--text); background: var(--bg); color: var(--text); }
 .fb-node-note, .fb-group-label { position: absolute; left: 0; color: var(--text-muted); font: 400 18px/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; pointer-events: none; }
 .fb-node-note { top: calc(100% + 22px); }
@@ -367,7 +367,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fb-step-list { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--text); }
 .fb-step { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--line-faint); font-size: var(--fb-small); line-height: 1.55; transition: background-color 140ms var(--fb-ease); }
 .fb-step.is-active { background: var(--fb-hover); }
-.fb-step-n { display: grid; place-items: center; width: 24px; height: 24px; background: var(--text); color: var(--bg); font: 500 12px/1 var(--font-mono); }
+.fb-step-n { display: grid; place-items: center; width: 24px; height: 24px; background: var(--text); color: var(--bg); font: 500 16px/1 var(--font-mono); }
 .fb-step.is-active .fb-step-n { outline: 2px solid var(--text); outline-offset: 2px; }
 .fb-step-where { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0 0 2px; }
 .fb-step-select { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-block: -10px; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
