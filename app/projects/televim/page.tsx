@@ -199,13 +199,22 @@ export default function TelevimPage() {
                   <strong>Media stays external.</strong> Stickers render in supported terminals, but
                   images, GIFs, and videos are handed to dedicated viewers.
                 </li>
-                <li>
-                  <strong>Music through Mizrab.</strong> Planned integration with my separate
-                  terminal music player, launched as a subprocess rather than built into Televim.
-                </li>
               </ul>
             </div>
           </div>
+          <aside className="fp-project-origin-side" aria-label="Artifacts from the record">
+            <div className="fp-project-artifact-card">
+              <span className="fp-project-artifact-label">Artifact · repository</span>
+              <p>Created 26 Sep 2026. v0.9.0 released 6 Nov 2026.</p>
+            </div>
+            <div className="fp-project-artifact-card">
+              <span className="fp-project-artifact-label">Artifact · sketch</span>
+              <p>
+                Lightweight, distraction free Telegram client; right where I&apos;m at home with the
+                Vim commands I&apos;m used to.
+              </p>
+            </div>
+          </aside>
         </div>
       </section>
 

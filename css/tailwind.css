@@ -210,6 +210,10 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-author-note p { margin: 0; font-size: 18px; line-height: 1.55; }
 .fp-project-author-note h4 { margin: 0; font-size: 16px; font-weight: 500; line-height: 1.55; }
 .fp-project-author-note ul { display: grid; gap: 4px; margin: 0; padding-left: 1.1em; color: var(--text-muted); font-size: clamp(.9375rem, .91rem + .14vw, 1rem); line-height: 1.55; list-style: disc; }
+.fp-project-origin-side { grid-column: 9 / span 4; display: grid; align-content: start; gap: 24px; }
+.fp-project-artifact-card { display: grid; gap: 8px; padding-top: 12px; border-top: 2px solid var(--text); }
+.fp-project-artifact-label { color: var(--text-muted); font: 400 13px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-artifact-card p { margin: 0; font-size: 18px; line-height: 1.55; }
 .fp-project-kicker { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .fp-project-kicker::before { content: ''; width: 24px; height: 24px; flex: none; clip-path: polygon(50% 0%, 61.2% 34.5%, 97.6% 34.5%, 68.2% 55.9%, 79.4% 90.5%, 50% 69.1%, 20.6% 90.5%, 31.8% 55.9%, 2.4% 34.5%, 38.8% 34.5%); background-color: color-mix(in oklch, var(--accent) 90%, var(--bg)); background-image: repeating-linear-gradient(8deg, transparent 0 2px, color-mix(in oklch, var(--bg) 22%, transparent) 2px 3px, transparent 3px 5px), repeating-linear-gradient(97deg, transparent 0 3px, color-mix(in oklch, var(--bg) 15%, transparent) 3px 4px, transparent 4px 7px); }
 .fp-project-actions { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -242,7 +246,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 @media (max-width: 1023px) {
   .fp-project-hero-text, .fp-project-hero-side { grid-column: 1 / -1; }
   .fp-project-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .fp-project-origin-quote, .fp-project-origin-prose { grid-column: 1 / -1; }
+  .fp-project-origin-quote, .fp-project-origin-prose, .fp-project-origin-side { grid-column: 1 / -1; }
 }
 @media (min-width: 768px) {
   .fp-install-scroll { padding-inline: 24px; }
