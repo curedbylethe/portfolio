@@ -14,26 +14,37 @@ export default function TelevimPage() {
         ← Catalogue
       </Link>
 
-      <header className="mt-8 border-b border-[var(--line)] pb-8">
-        <p className="fp-meta">Dossier 01 · Terminal application · 2026</p>
-        <h1 className="mt-4">Televim</h1>
-        <p className="mt-4 text-2xl font-medium">Telegram, without leaving your terminal.</p>
-        <p className="mt-4 text-[var(--text-muted)]">
-          Read and answer Telegram messages with a keyboard-first interface. Televim keeps private
-          conversations local, separates its pure domain crate, and enforces a memory budget in CI.
-        </p>
-      </header>
-
-      <dl className="fp-facts mt-8">
-        <dt>Language</dt>
-        <dd>Rust</dd>
-        <dt>Platform</dt>
-        <dd>macOS, Linux; Windows experimental</dd>
-        <dt>Status</dt>
-        <dd>Pre-1.0 · v0.9.0</dd>
-        <dt>Focus</dt>
-        <dd>Three-act workflow, keyboard trace, and right-to-left text</dd>
-      </dl>
+      <section className="fp-project-hero">
+        <div className="fp-project-hero-text">
+          <p className="fp-meta">Dossier 01 / Terminal application</p>
+          <h1>Televim</h1>
+          <p className="fp-project-headline">Telegram, without leaving your terminal.</p>
+          <p className="fp-project-lede">
+            Read and answer Telegram messages with a keyboard-first interface. Televim keeps private
+            conversations local, separates its pure domain crate, and enforces a memory budget in CI.
+          </p>
+        </div>
+        <aside className="fp-project-hero-side" aria-label="Project information">
+          <dl className="fp-project-meta">
+            <div>
+              <dt>Language</dt>
+              <dd>Rust</dd>
+            </div>
+            <div>
+              <dt>Platform</dt>
+              <dd>macOS, Linux; Windows experimental</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd>Pre-1.0 · v0.9.0</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Three-act workflow, keyboard trace, and right-to-left text</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
 
       <section className="mt-12 border-t border-[var(--line)] pt-8">
         <p className="fp-meta">01 · Hardest problem</p>
