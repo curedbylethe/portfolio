@@ -139,6 +139,26 @@ export default function TelevimPage() {
         </div>
       </nav>
 
+      <section id="s02" className="fp-project-origin" aria-labelledby="s02-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            02
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act I · Origin</span>
+            <h2 id="s02-h">Why it exists</h2>
+          </div>
+          <p className="fp-project-section-read">30 s</p>
+        </header>
+        <div className="fp-project-origin-grid">
+          <blockquote className="fp-project-origin-quote">
+            “Every action must be reachable from the home row.”
+            <br />
+            <span className="fp-project-origin-source">Product goal 2, docs/product.md</span>
+          </blockquote>
+        </div>
+      </section>
+
       <section className="mt-12 border-t border-[var(--line)] pt-8">
         <p className="fp-meta">01 · Hardest problem</p>
         <h2 className="mt-3 text-2xl font-medium">Right-to-left text in a terminal</h2>
