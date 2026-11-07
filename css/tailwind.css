@@ -204,6 +204,10 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-origin-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 32px; }
 .fp-project-origin-quote { grid-column: 1 / span 7; margin: 0; font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem); font-weight: 500; line-height: 1.25; letter-spacing: -.01em; text-wrap: balance; }
 .fp-project-origin-source { color: var(--text-muted); font: 400 13px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-act { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; row-gap: 12px; align-items: end; margin-top: 128px; padding-top: 24px; border-top: 2px solid var(--text); scroll-margin-top: 24px; }
+.fp-project-act-number { grid-column: 1 / span 2; color: var(--text-muted); font: 400 clamp(.75rem, .73rem + .1vw, .8125rem)/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-act-title { grid-column: 3 / span 5; margin: 0; font: 400 clamp(2.5rem, 1.7rem + 4vw, 5rem)/.9 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; }
+.fp-project-act-lede { grid-column: 8 / span 5; max-width: 44ch; margin: 0; color: var(--text-muted); font-size: clamp(1rem, .96rem + .2vw, 1.125rem); line-height: 1.55; text-wrap: pretty; }
 .fp-project-origin-prose { grid-column: 2 / span 6; display: grid; gap: 16px; max-width: 62ch; }
 .fp-project-author-note { display: grid; gap: 12px; padding: 16px 24px; border: 1px dashed var(--text-muted); }
 .fp-project-author-note > span { color: var(--text); font: 400 clamp(.75rem, .73rem + .1vw, .8125rem)/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
@@ -247,6 +251,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
   .fp-project-hero-text, .fp-project-hero-side { grid-column: 1 / -1; }
   .fp-project-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .fp-project-origin-quote, .fp-project-origin-prose, .fp-project-origin-side { grid-column: 1 / -1; }
+  .fp-project-act-number, .fp-project-act-title, .fp-project-act-lede { grid-column: 1 / -1; }
 }
 @media (min-width: 768px) {
   .fp-install-scroll { padding-inline: 24px; }

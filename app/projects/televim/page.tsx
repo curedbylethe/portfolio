@@ -218,6 +218,15 @@ export default function TelevimPage() {
         </div>
       </section>
 
+      <header id="act-2" className="fp-project-act">
+        <span className="fp-project-act-number">Act II</span>
+        <h2 className="fp-project-act-title">Dissect</h2>
+        <p className="fp-project-act-lede">
+          What the program had to do, how one keystroke moves through it, and the hardest problem it
+          met.
+        </p>
+      </header>
+
       <section className="mt-12 border-t border-[var(--line)] pt-8">
         <p className="fp-meta">01 · Hardest problem</p>
         <h2 className="mt-3 text-2xl font-medium">Right-to-left text in a terminal</h2>
