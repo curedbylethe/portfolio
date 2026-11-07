@@ -295,6 +295,24 @@ export default function TelevimPage() {
         </div>
       </section>
 
+      <section id="s04" className="fp-project-dsec" aria-labelledby="s04-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            04
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act II · Under the hood</span>
+            <h2 id="s04-h">A keystroke, layer by layer</h2>
+          </div>
+          <p className="fp-project-section-read">2 min</p>
+        </header>
+        <p className="fp-project-dsec-intro">
+          Pick something you can see the program do. The map numbers the crates it passes through,
+          in order; the list says what each one does with it. Arrows on the map are dependencies,
+          not calls.
+        </p>
+      </section>
+
       <section className="mt-12 border-t border-[var(--line)] pt-8">
         <p className="fp-meta">01 · Hardest problem</p>
         <h2 className="mt-3 text-2xl font-medium">Right-to-left text in a terminal</h2>
