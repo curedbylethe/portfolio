@@ -218,7 +218,7 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-progress-label small { display: block; margin-top: 2px; color: var(--text-muted); font-size: 13px; line-height: 1.55; }
 .fp-progress-value { text-align: right; font: 400 18px/1.55 var(--font-mono); }
 .fp-progress-value small { display: block; color: var(--text-muted); font: 400 13px/1.55 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
-.fp-progress-track { position: relative; grid-column: 1 / -1; display: block; height: 12px; border: 1px solid var(--charcoal); }
+.fp-progress-track { position: relative; grid-column: 1 / -1; display: block; height: 12px; border: 1px solid var(--charcoal); background: repeating-linear-gradient(to right, var(--line-faint) 0 1px, transparent 1px 8px); }
 .fp-progress-bar { position: absolute; inset: 0 auto 0 0; display: block; min-width: 2px; height: 10px; background: var(--text); }
 .fp-project-evidence-side { grid-column: 9 / span 4; display: grid; align-content: start; gap: 32px; }
 .fp-project-evidence-context { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px 16px; margin: 0; padding-top: 12px; border-top: 2px solid var(--text); font-size: 16px; line-height: 1.55; }
