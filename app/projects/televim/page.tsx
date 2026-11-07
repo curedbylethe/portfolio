@@ -323,6 +323,31 @@ export default function TelevimPage() {
         </p>
       </section>
 
+      <header id="act-3" className="fp-project-act">
+        <span className="fp-project-act-number">Act III</span>
+        <h2 className="fp-project-act-title">Reflect</h2>
+        <p className="fp-project-act-lede">
+          What has been measured, what has not, and what is still open.
+        </p>
+      </header>
+
+      <section id="s07" className="fp-project-dsec" aria-labelledby="s07-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            07
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Act III · Evidence</span>
+            <h2 id="s07-h">Against the brief</h2>
+          </div>
+          <p className="fp-project-section-read">1–5 min</p>
+        </header>
+        <p className="fp-project-dsec-intro">
+          The acceptance criteria from <code>product.md</code>, each against what was measured,
+          drawn to scale. None is a connected session under load.
+        </p>
+      </section>
+
     </article>
   )
 }
