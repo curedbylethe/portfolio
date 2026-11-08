@@ -38,6 +38,7 @@ export default function InstallCommand() {
           <span aria-live="polite">{copyLabel}</span>
         </button>
       </figcaption>
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- focus enables keyboard scrolling */}
       <div className="fp-install-scroll" tabIndex={0} aria-label="Install command">
         <pre>
           <code>
