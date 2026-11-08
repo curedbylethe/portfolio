@@ -59,6 +59,7 @@ const ThemeSwitch = () => {
   const { theme, setTheme, resolvedTheme } = useTheme()
 
   // When mounted on client, now we can show the UI
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- avoids rendering a theme before hydration
   useEffect(() => setMounted(true), [])
 
   return (
