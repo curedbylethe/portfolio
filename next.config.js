@@ -70,12 +70,6 @@ module.exports = () => {
     trailingSlash: true,
     turbopack: {
       root: process.cwd(),
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
     },
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     images: {
@@ -95,13 +89,8 @@ module.exports = () => {
         },
       ]
     },
-    webpack: (config, options) => {
+    webpack: (config) => {
       config.cache = { type: 'memory' }
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      })
-
       return config
     },
   })

@@ -52,7 +52,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^10.0.1",
-    "@svgr/webpack": "^8.1.0",
     "@testing-library/dom": "10.4.2",
     "@testing-library/react": "16.3.3",
     "@types/mdx": "^2.0.14",
@@ -82,5 +81,22 @@
       "yarn prettier --write"
     ]
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "resolutions": {
+    "@opentelemetry/core": "2.12.0",
+    "@opentelemetry/propagator-jaeger": "2.12.0",
+    "@opentelemetry/resources": "2.12.0",
+    "@opentelemetry/sdk-trace-base": "2.12.0",
+    "@opentelemetry/sdk-trace-node": "2.12.0",
+    "cacache/glob": "14.0.2",
+    "js-yaml": "4.3.2",
+    "katex": "0.18.2",
+    "minimatch": "11.0.1",
+    "postcss-selector-parser": "6.1.5",
+    "toml": "5.0.1",
+    "uuid": "11.1.1",
+    "zod": "4.6.7",
+    "@contentlayer2/utils@0.5.8": "patch:@contentlayer2/utils@npm%3A0.5.8#./.yarn/patches/@contentlayer2-utils-npm-0.5.8-f14c371a28.patch",
+    "@eslint/eslintrc@^3.3.7": "patch:@eslint/eslintrc@npm%3A3.3.7#./.yarn/patches/@eslint-eslintrc-npm-3.3.7-53b0368519.patch"
+  }
 }
