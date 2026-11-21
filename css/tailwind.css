@@ -486,10 +486,12 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 
 @media (max-width: 1023px) {
   .fp-project-case-title > div, .fp-project-case-title dl { grid-column: 1 / -1; }
-  .fp-project-case-grid { grid-template-columns: 1fr; }
+  .fp-project-case-grid { grid-template-columns: minmax(0, 1fr); }
   .fp-project-case-nav { display: none; }
-  .fp-project-case-station { grid-template-columns: 1fr; padding-inline: 16px; }
+  .fp-project-case-station { grid-template-columns: minmax(0, 1fr); padding-inline: 16px; }
   .fp-project-case-station h4, .fp-project-case-body { grid-column: 1; }
+  .fp-project-case-body { grid-template-columns: minmax(0, 1fr); }
+  .fp-project-case-body > * { min-width: 0; }
   .fp-project-case-station h4 { grid-auto-flow: column; justify-content: start; align-items: baseline; gap: 12px; }
 }
 @media (max-width: 767px) {
