@@ -88,3 +88,8 @@
     @media(max-width:420px){.basalam-dossier .hero-main .display{font-size:clamp(3rem,12vw,4rem)}}
 
     .basalam-dossier .merged{display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;padding:8px 12px;border:1px solid var(--ink);border-left:4px solid var(--accent);background:var(--raised);font:12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+
+    /* Sit inside the site shell like the other dossiers: no second inset, no second background. */
+    .basalam-dossier{background:transparent}
+    .basalam-dossier .container{width:100%;max-width:none;margin:0}
+    .basalam-dossier{padding-bottom:96px}

@@ -16,8 +16,8 @@ export const basalamArchitecture: FlowBoardData = {
       kind: 'stage',
       label: 'Screen',
       subtitle: '01 / Entry',
-      position: { x: 40, y: 40 },
-      size: { width: 210, height: 70 },
+      position: { x: 100, y: 95 },
+      size: { width: 160, height: 60 },
       details: [{ label: 'Entry', content: 'Wait for a key, mouse event, tick or resize.' }],
     },
     {
@@ -25,8 +25,8 @@ export const basalamArchitecture: FlowBoardData = {
       kind: 'stage',
       label: 'Widget tree',
       subtitle: '02 / Dispatch',
-      position: { x: 300, y: 40 },
-      size: { width: 210, height: 70 },
+      position: { x: 200, y: 190 },
+      size: { width: 160, height: 60 },
       details: [{ label: 'Dispatch', content: 'Focused widget first, then parents and keymap.' }],
     },
     {
@@ -34,8 +34,8 @@ export const basalamArchitecture: FlowBoardData = {
       kind: 'stage',
       label: 'Buffer',
       subtitle: '03 / Draw',
-      position: { x: 560, y: 40 },
-      size: { width: 210, height: 70 },
+      position: { x: 300, y: 285 },
+      size: { width: 160, height: 60 },
       details: [{ label: 'Draw', content: 'Cell content, styles, widths and borders.' }],
     },
     {
@@ -43,8 +43,8 @@ export const basalamArchitecture: FlowBoardData = {
       kind: 'stage',
       label: 'Terminal',
       subtitle: '04 / Output',
-      position: { x: 820, y: 40 },
-      size: { width: 210, height: 70 },
+      position: { x: 400, y: 380 },
+      size: { width: 160, height: 60 },
       details: [{ label: 'Output', content: 'ANSI changes, not an unconditional full repaint.' }],
     },
     {
@@ -52,8 +52,8 @@ export const basalamArchitecture: FlowBoardData = {
       kind: 'signal',
       label: 'os.signal',
       subtitle: 'SIGWINCH',
-      position: { x: 40, y: 210 },
-      size: { width: 210, height: 70 },
+      position: { x: 0, y: 0 },
+      size: { width: 160, height: 60 },
       details: [
         {
           label: 'Resize',
