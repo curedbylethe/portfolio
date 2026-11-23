@@ -269,6 +269,17 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-install-scroll { overflow-x: auto; overscroll-behavior-x: contain; padding: 16px 16px 24px; scrollbar-color: var(--charcoal) transparent; scrollbar-width: thin; }
 .fp-install-scroll pre { max-width: 100%; margin: 0; padding: 0; border: 0; background: none; font: inherit; white-space: pre; }
 .fp-install-prompt { color: var(--accent); user-select: none; }
+.fp-project-demo { display: grid; gap: 16px; margin: 0; }
+.fp-project-demo-head { display: grid; gap: 4px; }
+.fp-project-demo-label { color: var(--text-muted); font: 400 clamp(.75rem, .73rem + .1vw, .8125rem)/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-demo-head p { margin: 0; color: var(--text-muted); }
+/* System monospace: the site mono font lacks box-drawing glyphs, and the fallback breaks column alignment. */
+.fp-project-demo pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; line-height: 1.25; }
+.fp-project-demo-wide { display: inline-block; width: 2ch; overflow: hidden; vertical-align: bottom; }
+/* shortcut: fixed heights from the shell's measured running state (1270px at 1100 wide, 1327px at 940, 1348px at 736, 1992px at 333); cross-origin frame cannot report its height, re-measure if the shell layout changes. */
+.fp-project-demo-frame { display: block; width: 100%; height: 1340px; border: 1px solid var(--line); }
+@media (max-width: 1023px) { .fp-project-demo-frame { height: 1400px; } }
+@media (max-width: 767px) { .fp-project-demo-frame { height: calc(2610px - 155vw); } }
 .fp-project-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; margin: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line-faint); }
 .fp-project-meta > div { display: grid; align-content: start; gap: 4px; padding-block: 16px; }
 .fp-project-meta dt { color: var(--text-muted); font: 400 clamp(.75rem, .73rem + .1vw, .8125rem)/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
@@ -539,18 +550,17 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-pager-title { font: 400 clamp(1.25rem, 1.15rem + .5vw, 1.5rem)/1 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; }
 
 /* Televim retrospective. */
-.fp-project-retro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; row-gap: 48px; }
-.fp-project-retro-col { display: grid; gap: 16px; align-content: start; }
-.fp-project-retro-col h3 { margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--text); font: 500 12px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
-.fp-project-retro-item { display: grid; gap: 4px; padding-bottom: 16px; border-bottom: 1px solid var(--line-faint); }
+.fp-project-retro { display: grid; row-gap: 48px; }
+.fp-project-retro-col { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px 24px; align-content: start; }
+.fp-project-retro-col h3 { grid-column: 1 / -1; margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--text); font: 500 12px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-retro-item { display: grid; align-content: start; gap: 4px; padding-bottom: 16px; border-bottom: 1px solid var(--line-faint); }
 .fp-project-retro-item h4 { margin: 0; font-size: clamp(1rem, .96rem + .2vw, 1.125rem); font-weight: 500; }
 .fp-project-retro-item p { margin: 0; font-size: clamp(.9375rem, .91rem + .14vw, 1rem); text-wrap: pretty; }
-.fp-project-retro-item .is-placeholder { color: var(--text-muted); font-style: italic; }
 .fp-project-retro-open { grid-column: 1 / -1; margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 24px; }
 .fp-project-retro-open li { break-inside: avoid; padding-block: 12px; border-top: 1px solid var(--line-faint); font-size: clamp(.9375rem, .91rem + .14vw, 1rem); }
 .fp-project-retro-open li span { color: var(--text-muted); font: 400 12px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 @media (max-width: 767px) {
-  .fp-project-retro { grid-template-columns: 1fr; row-gap: 48px; }
+  .fp-project-retro-col { grid-template-columns: 1fr; }
   .fp-project-retro-open { columns: 1; }
 }
 

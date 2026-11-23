@@ -29,7 +29,7 @@ const projectsData: Project[] = [
     info: [
       { label: 'Language', value: 'Rust' },
       { label: 'Platform', value: 'macOS, Linux; Windows experimental' },
-      { label: 'Status', value: 'Pre-1.0 · v0.9.0' },
+      { label: 'Status', value: 'Pre-1.0 · v0.17.0' },
       {
         label: 'Dossier',
         value: 'Full: three acts, a keystroke trace, a case study on right-to-left text',

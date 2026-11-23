@@ -13,7 +13,7 @@ const ContentSecurityPolicy = `
   media-src *.s3.amazonaws.com;
   connect-src *;
   font-src 'self' https://fonts.gstatic.com;
-  frame-src 'self'
+  frame-src 'self' https://curedbylethe.github.io
 `
 
 const securityHeaders = [

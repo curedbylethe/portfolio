@@ -391,7 +391,7 @@ export const televimArchitecture: FlowBoardData = {
       constraint: {
         label: 'Constraint',
         content:
-          'Key to drawn frame within 16 ms. Measured: 0.132 ms on the shipped binary, with the terminal’s own read and paint outside the probe.',
+          'Key to drawn frame within 16 ms. Measured on v0.17.0: 0.175 ms on the shipped binary, with the terminal’s own read and paint outside the probe.',
       },
     },
     {

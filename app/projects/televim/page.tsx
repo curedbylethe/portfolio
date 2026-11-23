@@ -5,41 +5,51 @@ import Progress, { type ProgressItem } from '@/components/Progress'
 import CaseStudy from '@/components/CaseStudy'
 import DecisionRecord from '@/components/DecisionRecord'
 import TelevimArchitecture from './TelevimArchitecture'
+import TelevimDemo from './TelevimDemo'
 
 const evidence: ProgressItem[] = [
   {
     label: 'Idle memory',
-    detail: 'Shipped binary, sealed 60-chat cache drawn offline; 125 samples, 4.23–9.34 MB',
-    value: '7.55 MB',
+    detail:
+      'Shipped binary, 60-chat archive of 6,400 messages loaded offline; 125-sample median, raw 1.89–10.78 MB',
+    value: '8.06 MB',
     context: 'of 50 MB',
-    progress: 15.1,
+    progress: 16.124,
+  },
+  {
+    label: 'Archive write peak',
+    detail:
+      'Worst case: a full archive saved in one transaction; four runs, 47.9–48.0 MB. Includes a 19 MiB key derivation the shipped client skips',
+    value: '48.0 MB',
+    context: 'of 50 MB',
+    progress: 96,
   },
   {
     label: 'Startup',
-    detail: 'Launch to the empty sign-in frame; run medians 1.58–9.59 ms',
-    value: '2.577 ms',
+    detail: 'Launch to the empty sign-in frame; run medians 1.32–13.52 ms',
+    value: '2.234 ms',
     context: 'of 500 ms',
-    progress: 0.5154,
+    progress: 0.4468,
   },
   {
     label: 'Input latency',
     detail: 'Key to drawn frame, shipped binary',
-    value: '0.132 ms',
+    value: '0.175 ms',
     context: 'of 16 ms',
-    progress: 0.825,
+    progress: 1.09375,
   },
   {
     label: 'Binary size',
-    detail: 'Stripped release, 6,488,432 bytes',
-    value: '6.49 MB',
+    detail: 'Stripped release, 9,560,960 bytes, SQLite bundled in',
+    value: '9.56 MB',
     context: 'of 15 MB',
-    progress: 43.2667,
+    progress: 63.7397,
   },
   {
     label: 'Vim fidelity',
     detail: 'Target: 95% of common motions. PTY tests reach a subset.',
-    value: 'Partly covered',
-    context: 'no figure',
+    value: 'Subset tested',
+    context: 'no percentage yet',
   },
   {
     label: 'Protocol',
@@ -74,12 +84,17 @@ export default function TelevimPage() {
             Televim borrows Vim’s modes, so a handful of keys move, write and search. It shows
             one-to-one chats and nothing else.
           </p>
+          <p className="fp-project-lede">
+            I designed and built it alone in Rust. Measured on v0.17.0, it idles at 8.1&nbsp;MB with
+            60 chats loaded, about a sixth of its 50&nbsp;MB budget, and draws its first screen in
+            about 2&nbsp;ms. Your login stays encrypted on disk.
+          </p>
           <div className="fp-project-actions">
             <a
               className="fp-project-button fp-project-button-primary"
               href="https://github.com/curedbylethe/televim/releases"
             >
-              Download v0.9.0
+              Download latest release
             </a>
             <a
               className="fp-project-button fp-project-button-secondary"
@@ -102,14 +117,18 @@ export default function TelevimPage() {
             </div>
             <div>
               <dt>Status</dt>
-              <dd>Pre-1.0 · v0.9.0</dd>
+              <dd>Pre-1.0 · v0.17.0, 21 releases since Sep 2026</dd>
             </div>
             <div>
-              <dt>Focus</dt>
-              <dd>Three-act workflow, keyboard trace, and right-to-left text</dd>
+              <dt>Role</dt>
+              <dd>Sole author: product, Rust code, tests and release pipeline</dd>
             </div>
           </dl>
         </aside>
+      </section>
+
+      <section id="demo" aria-label="Interactive demo">
+        <TelevimDemo />
       </section>
 
       <nav className="fp-project-toc" aria-label="Dossier contents">
@@ -239,8 +258,9 @@ export default function TelevimPage() {
               <h4>Early trade-offs</h4>
               <ul>
                 <li>
-                  <strong>Private chats first.</strong> Groups and channels were initially excluded
-                  as distractions. Open-source collaboration has since made group support necessary.
+                  <strong>Private chats first.</strong> Groups and channels were left out as
+                  distractions. Open-source collaboration has since made group support necessary;
+                  today Televim still shows one-to-one chats only.
                 </li>
                 <li>
                   <strong>Media stays external.</strong> Stickers render in supported terminals, but
@@ -252,7 +272,7 @@ export default function TelevimPage() {
           <aside className="fp-project-origin-side" aria-label="Artifacts from the record">
             <div className="fp-project-artifact-card">
               <span className="fp-project-artifact-label">Artifact · repository</span>
-              <p>Created 26 Sep 2026. v0.9.0 released 6 Nov 2026.</p>
+              <p>Created 26 Sep 2026. v0.17.0 released 22 Nov 2026.</p>
             </div>
             <div className="fp-project-artifact-card">
               <span className="fp-project-artifact-label">Artifact · sketch</span>
@@ -301,7 +321,7 @@ export default function TelevimPage() {
               </li>
               <li>
                 <b>A working protocol</b>Sign in, fetch the private chat list, send and receive over
-                MTProto.
+                MTProto, Telegram’s own protocol.
               </li>
             </ul>
           </div>
@@ -312,13 +332,14 @@ export default function TelevimPage() {
             </h3>
             <ul>
               <li>
-                <b>A pure domain</b>
-                <code>domain</code> knows nothing of <code>tokio</code> or <code>ratatui</code>; its
+                <b>A pure domain</b>The core logic knows nothing of the runtime or the screen:{' '}
+                <code>domain</code> never imports <code>tokio</code> or <code>ratatui</code>; its
                 one dependency is <code>thiserror</code>.
               </li>
               <li>
-                <b>One door to the protocol</b>Only <code>telegram-framework</code> may name a{' '}
-                <code>grammers</code> type.
+                <b>One door to the protocol</b>Only <code>telegram-framework</code> may touch{' '}
+                <code>grammers</code>, the Telegram library underneath, so a library change stays in
+                one crate.
               </li>
               <li>
                 <b>No plaintext session</b>The OS credential store, or an encrypted file.
@@ -332,7 +353,7 @@ export default function TelevimPage() {
             </h3>
             <ul>
               <li>
-                <b>Channels</b>Unwanted clutter.
+                <b>Groups and channels</b>Kept out to stay focused and small. See D-03.
               </li>
               <li>
                 <b>An arena allocator</b>Named in the goals, dropped after measurement. See D-04.
@@ -354,9 +375,9 @@ export default function TelevimPage() {
           <p className="fp-project-section-read">2 min</p>
         </header>
         <p className="fp-project-dsec-intro">
-          Pick something you can see the program do. The map numbers the crates it passes through,
-          in order; the list says what each one does with it. Arrows on the map are dependencies,
-          not calls.
+          Pick something you can see the program do. The map numbers the crates (Rust packages) it
+          passes through, in order; the list says what each one does with it. Arrows on the map are
+          dependencies, not calls.
         </p>
         <TelevimArchitecture />
       </section>
@@ -389,8 +410,8 @@ export default function TelevimPage() {
                   </p>
                   <p>
                     No mainstream terminal applies the Unicode Bidirectional Algorithm by default.
-                    Yet every terminal that draws these scripts at all runs a shaper, and shaping
-                    reverses right-to-left runs on its own.
+                    Yet every terminal that draws these scripts runs a shaper, the font engine that
+                    joins letters, and the shaper reverses right-to-left runs on its own.
                   </p>
                 </>
               ),
@@ -556,10 +577,10 @@ export default function TelevimPage() {
               content: (
                 <>
                   <p>
-                    The default stays logical order, byte for byte what the binary already emitted,
-                    because it is right on every terminal that shapes. The other two modes are one
-                    configuration key for the whole machine, not per terminal, so an ssh hop keeps
-                    the setting it was launched with.
+                    The default stays logical order, byte for byte what the binary already emitted:
+                    on terminals that shape, each word reads right, and left-to-right text is
+                    untouched. The other two modes are one configuration key for the whole machine,
+                    not per terminal, so an ssh hop keeps the setting it was launched with.
                   </p>
                   <figure className="fp-project-case-code">
                     <figcaption>
@@ -774,7 +795,7 @@ export default function TelevimPage() {
             id="D-04"
             title="No arena allocator, by measurement"
             choice="the system allocator."
-            cost="a stated goal not met as written."
+            cost="one original goal dropped on the evidence."
           >
             <dl className="fp-project-decision-body">
               <dt>Problem</dt>
@@ -816,8 +837,9 @@ export default function TelevimPage() {
           <p className="fp-project-section-read">1–5 min</p>
         </header>
         <p className="fp-project-dsec-intro">
-          The acceptance criteria from <code>product.md</code>, each against what was measured,
-          drawn to scale. None is a connected session under load.
+          Each target from <code>product.md</code> against its v0.17.0 measurement, drawn to scale.
+          Every figure sits inside its budget; only the brief archive write peak comes close. None
+          comes from a connected session under load.
         </p>
         <div className="fp-project-evidence">
           <Progress items={evidence} />
@@ -825,23 +847,34 @@ export default function TelevimPage() {
             <dl className="fp-project-evidence-context">
               <dt>Taken</dt>
               <dd>
-                16 Oct 2026, on the <code>0.5.0</code> tree
+                23 Nov 2026, on v0.17.0 code (<code>e7131d6</code>); write peak from PR #230
               </dd>
               <dt>Host</dt>
               <dd>Darwin arm64, one machine</dd>
               <dt>Method</dt>
-              <dd>Median of five make measure reports, each a median of five launches</dd>
+              <dd>
+                Median of five make measure reports, each a median of five launches. Write peak: an
+                archive stress test, four runs
+              </dd>
               <dt>Record</dt>
-              <dd>memory.md ↗</dd>
+              <dd>
+                <a href="https://github.com/curedbylethe/televim/blob/main/docs/memory.md">
+                  memory.md ↗
+                </a>
+              </dd>
             </dl>
             <div className="fp-project-evidence-limits">
               <span>What these figures do not show</span>
               <ul>
                 <li>A connected session with fetched history.</li>
+                <li>
+                  A real session’s chat list, up to about 6&nbsp;MB, on top of the write peak.
+                </li>
                 <li>End-to-end latency: the terminal’s read and paint sit outside the probe.</li>
                 <li>Linux or Windows.</li>
                 <li>
-                  The 20–30 MB stretch band: not attempted. Falling below it is not meeting it.
+                  The 20–30 MB stretch target. Measured memory already sits below it, but no run was
+                  set up to test it.
                 </li>
               </ul>
             </div>
@@ -877,21 +910,6 @@ export default function TelevimPage() {
             <div className="fp-project-retro-item">
               <h4>Not yet known</h4>
               <p>How much memory a connected session holds after fetching real history.</p>
-            </div>
-          </div>
-          <div className="fp-project-retro-col">
-            <h3>Author’s account · to be written</h3>
-            <div className="fp-project-retro-item">
-              <h4>What worked</h4>
-              <p className="is-placeholder">In your words. One paragraph.</p>
-            </div>
-            <div className="fp-project-retro-item">
-              <h4>What was harder than expected</h4>
-              <p className="is-placeholder">In your words. One paragraph.</p>
-            </div>
-            <div className="fp-project-retro-item">
-              <h4>Started again today, what would change</h4>
-              <p className="is-placeholder">In your words. One paragraph.</p>
             </div>
           </div>
           <ul className="fp-project-retro-open" aria-label="Unfinished, from known-gaps.md">
