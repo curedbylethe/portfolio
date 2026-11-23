@@ -13,10 +13,20 @@ interface CaseStudyProps {
   title: string
   sources: string
   status: string
+  /** One-line result shown above the tabs, so a skimmer need not open "What shipped". */
+  outcome?: ReactNode
   stations: CaseStudyStation[]
 }
 
-export default function CaseStudy({ id, label, title, sources, status, stations }: CaseStudyProps) {
+export default function CaseStudy({
+  id,
+  label,
+  title,
+  sources,
+  status,
+  outcome,
+  stations,
+}: CaseStudyProps) {
   const [selected, setSelected] = useState(0)
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
 
@@ -57,6 +67,12 @@ export default function CaseStudy({ id, label, title, sources, status, stations 
           <dd>{status}</dd>
         </dl>
       </header>
+      {outcome && (
+        <p className="fp-project-case-outcome">
+          <b>Outcome</b>
+          {outcome}
+        </p>
+      )}
       <div className="fp-project-case-nav" role="tablist" aria-label="Case study stations">
         {stations.map((station, index) => (
           <button

@@ -15,7 +15,10 @@ export default function TelevimArchitecture() {
               <span>Plate 3 · Crate map</span>
               <span>Source: docs/architecture.md</span>
             </div>
-            <FlowBoard.Canvas label="Crate map" />
+            <p className="fp-project-board-hint">Swipe the map sideways to pan</p>
+            <div className="fp-project-board-scroll">
+              <FlowBoard.Canvas label="Crate map" />
+            </div>
             <FlowBoard.Toolbar label="Crate map view" />
             <figcaption>
               <b>Select a crate for its responsibility.</b> Only <code>grammers</code> is drawn

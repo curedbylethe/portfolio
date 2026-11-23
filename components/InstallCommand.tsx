@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 
 const command =
   'curl -fsSL https://raw.githubusercontent.com/curedbylethe/televim/main/scripts/install.sh | sh'
@@ -43,7 +43,16 @@ export default function InstallCommand() {
         <pre>
           <code>
             <span className="fp-install-prompt">$ </span>
-            {command}
+            {command.split('/').map((part, index) => (
+              <Fragment key={index}>
+                {index > 0 && (
+                  <>
+                    /<wbr />
+                  </>
+                )}
+                {part}
+              </Fragment>
+            ))}
           </code>
         </pre>
       </div>

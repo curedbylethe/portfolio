@@ -47,15 +47,17 @@ const evidence: ProgressItem[] = [
   },
   {
     label: 'Vim fidelity',
-    detail: 'Target: 95% of common motions. PTY tests reach a subset.',
+    detail:
+      'Target: 95% of common motions. PTY tests cover a subset today; counting the covered share is the next step.',
     value: 'Subset tested',
-    context: 'no percentage yet',
+    context: 'next: measure',
   },
   {
     label: 'Protocol',
-    detail: 'Target: sign in, list chats, send and receive against a test datacenter',
+    detail:
+      'Target: sign in, list chats, send and receive against a test datacenter. A recorded pass is the next step.',
     value: 'Exercised',
-    context: 'no pass record here',
+    context: 'next: record',
   },
 ]
 
@@ -375,6 +377,13 @@ export default function TelevimPage() {
           title="Right-to-left text in a terminal"
           sources="decisions.md, known-gaps.md"
           status="Shipped, with named limits"
+          outcome={
+            <>
+              Televim picks word-order emission on kitty and plain logical order elsewhere; xterm
+              and alacritty users opt into a visual mode with one key. Open: Arabic and Persian
+              letters do not join in that mode.
+            </>
+          }
           stations={[
             {
               title: 'Problem',
@@ -837,6 +846,14 @@ export default function TelevimPage() {
               <dd>
                 Median of five <code>make measure</code> reports, each a median of five launches.
                 Write peak: an archive stress test, four runs
+              </dd>
+              <dt>Checks</dt>
+              <dd>
+                <code>make ci</code> (format, lint, boundary, tests, release build) on every push
+                and nightly; about 2,780 test attributes in the source, counted not run.{' '}
+                <a href="https://github.com/curedbylethe/televim/actions/workflows/ci.yml">
+                  CI runs ↗
+                </a>
               </dd>
               <dt>Record</dt>
               <dd>
