@@ -1,0 +1,403 @@
+.catlog {
+  --sleeve: #161020;
+  --violet: #ae8bff;
+  --pink: #ff82c7;
+  --label: #553582;
+}
+.catlog p {
+  text-wrap: pretty;
+}
+.catlog h3 {
+  font-weight: 700;
+  font-size: 1.18rem;
+  line-height: 1.28;
+}
+.catlog :is(a, summary):focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+.catlog-cover {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: center;
+  margin-block: 1.5rem;
+}
+.catlog-cover-copy {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+}
+.catlog-cover h1 img {
+  width: clamp(10rem, 20vw, 15rem);
+  height: auto;
+}
+.catlog-cover-copy > p:not([class]) {
+  max-width: 46ch;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+.catlog .catlog-premise {
+  text-wrap: balance;
+  max-width: 19ch;
+  font-size: clamp(2rem, 3.6vw, 3.55rem);
+  line-height: 1.01;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+.catlog-cover-art {
+  min-width: 0;
+}
+.catlog-sleeve {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 2vw, 1.75rem);
+  background: #30233e;
+}
+.catlog-sleeve::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 40%;
+  width: 135%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle, transparent 0 4px, #c5a8ec33 4.5px 5px),
+    conic-gradient(
+      from 15deg,
+      #18111e,
+      #574466 18%,
+      #17111c 28% 54%,
+      #685877 68%,
+      #211629 83%,
+      #18111e
+    );
+}
+.catlog-sleeve img {
+  width: min(72%, 215px);
+  height: auto;
+  border-radius: 7px;
+  outline: 1px solid #ffffff38;
+  box-shadow: 0 8px 30px #09051188;
+}
+.catlog-cover-art figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding-top: 0.55rem;
+  color: var(--text-muted);
+  font: 0.76rem/1.4 var(--font-mono);
+}
+.catlog-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--sleeve);
+  color: #fff7ff;
+}
+.catlog-proof a {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  padding: clamp(1rem, 2.4vw, 1.85rem);
+  text-decoration: none;
+}
+.catlog-proof a + a {
+  border-inline-start: 1px solid #51435e;
+}
+.catlog-proof strong {
+  color: #d2bbff;
+  font-size: clamp(1.35rem, 2.7vw, 2.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.catlog-proof span {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 29ch;
+}
+.catlog-proof a:hover strong,
+.catlog-proof a:focus-visible strong {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+.catlog .fp-project-section-head {
+  margin-bottom: 1.6rem;
+}
+.catlog .fp-project-section-title {
+  grid-column-end: -1;
+}
+.catlog-gallery,
+.catlog-path,
+.catlog-choices,
+.catlog-stories,
+.catlog-radio-detail {
+  display: grid;
+  gap: 1.4rem;
+}
+.catlog-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.catlog-gallery a {
+  display: block;
+  overflow: hidden;
+  background: var(--sleeve);
+}
+.catlog-gallery img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.18;
+  object-fit: cover;
+  object-position: center 56%;
+}
+.catlog-gallery figure:nth-child(2) img {
+  object-position: center 26%;
+}
+.catlog-gallery figure:nth-child(3) img {
+  object-position: center 58%;
+}
+.catlog-gallery h3 {
+  margin-top: 0.75rem;
+}
+.catlog-gallery p,
+.catlog-path p {
+  margin-top: 0.35rem;
+}
+.catlog p.catlog-note,
+.catlog small {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.catlog p.catlog-note {
+  margin-top: 1.25rem;
+  max-width: 85ch;
+}
+.catlog .fp-project-origin-prose p + p {
+  margin-top: 1rem;
+}
+.catlog-path {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+}
+.catlog-path li {
+  counter-increment: step;
+  border-top: 2px solid var(--label);
+}
+.catlog-path li::before {
+  content: counter(step, decimal-leading-zero);
+  font: 0.85rem var(--font-mono);
+  color: var(--label);
+  display: block;
+  margin: 0.65rem 0 1rem;
+}
+.catlog-intro {
+  max-width: 65ch;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+.catlog-stories,
+.catlog-choices,
+.catlog-radio-detail {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
+}
+.catlog :is(.catlog-choices, .catlog-stories, .catlog-radio-detail, .catlog-tests) p + p,
+.catlog :is(.catlog-choices, .catlog-stories, .catlog-radio-detail) h3 + p {
+  margin-top: 0.6rem;
+}
+.catlog-choices > div,
+.catlog-radio-detail > div {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.catlog-choices b {
+  color: var(--label);
+  margin-right: 0.4em;
+}
+.catlog-choices p a {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+.catlog small {
+  display: block;
+  margin-top: 0.7rem;
+}
+.catlog-timeline {
+  background: var(--sleeve);
+  color: #fcf4ff;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  margin: 1.5rem 0 2rem;
+}
+.catlog-timeline figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+.catlog-timeline figcaption strong {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: -0.04em;
+}
+.catlog-timeline figcaption span,
+.catlog-ruler {
+  color: #d7c9e6;
+  font: 0.82rem/1.4 var(--font-mono);
+}
+.catlog-ruler {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+  border-bottom: 1px solid #81748d;
+  padding-bottom: 0.45rem;
+}
+.catlog-lane {
+  background: var(--violet);
+  color: #1c102c;
+  padding: 0.6rem 0.8rem;
+  margin-block: 0.45rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.catlog-join {
+  margin-left: 50%;
+  background: var(--pink);
+}
+.catlog-timeline p {
+  margin-top: 1.1rem;
+  color: #efe3f8;
+}
+.catlog-radio-detail {
+  margin-top: 1.5rem;
+}
+.catlog-drift {
+  margin-block: 1rem;
+}
+.catlog-drift > div {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.9fr) 1.2fr;
+  gap: 0.7rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--line-faint);
+}
+.catlog-drift dt {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.catlog-tests > div {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.7fr) 2fr;
+  gap: 0.65rem 1.5rem;
+  padding-block: 1.2rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 1.25rem;
+}
+.catlog-tests p {
+  max-width: 69ch;
+}
+.catlog-tests code {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 800px) {
+  .catlog-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .catlog-cover {
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 640px) {
+  .catlog-cover,
+  .catlog-choices,
+  .catlog-stories,
+  .catlog-radio-detail,
+  .catlog-tests > div {
+    grid-template-columns: 1fr;
+  }
+  .catlog-sleeve {
+    height: 15rem;
+    align-items: start;
+  }
+  .catlog-sleeve img {
+    width: min(60%, 215px);
+  }
+  .catlog-proof {
+    grid-template-columns: 1fr;
+  }
+  .catlog-proof a {
+    grid-template-columns: minmax(7.5rem, 0.85fr) 1.2fr;
+    align-items: center;
+  }
+  .catlog-proof a + a {
+    border-inline-start: 0;
+    border-top: 1px solid #51435e;
+  }
+  .catlog-gallery {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .catlog-gallery figure {
+    display: grid;
+    grid-template-columns: 41% 1fr;
+    gap: 0.85rem;
+    align-items: center;
+  }
+  .catlog-gallery img {
+    aspect-ratio: 0.95;
+  }
+  .catlog-gallery h3 {
+    margin: 0;
+  }
+  .catlog-gallery p {
+    font-size: 0.92rem;
+  }
+  .catlog-path {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .catlog-path li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 0.75rem;
+    padding-top: 0.65rem;
+  }
+  .catlog-path li::before {
+    grid-row: span 2;
+    margin: 0.2rem 0 0;
+  }
+}
+@media print {
+  .catlog {
+    padding-bottom: 1rem;
+  }
+  .catlog .fp-project-toc {
+    padding-block: 1.5rem;
+  }
+  .catlog .fp-project-dsec + .fp-project-dsec {
+    padding-top: 1.75rem;
+  }
+  .catlog .fp-project-actions,
+  .catlog .fp-project-back,
+  .catlog .fp-project-pager {
+    display: none;
+  }
+  .catlog :is(figure, .catlog-tests > div, .catlog-choices > div, .catlog-stories > div) {
+    break-inside: avoid;
+  }
+  .catlog .fp-project-section-head {
+    break-after: avoid;
+  }
+  .catlog :is(.catlog-proof, .catlog-timeline, .catlog-sleeve) {
+    print-color-adjust: exact;
+  }
+}

@@ -3,7 +3,7 @@ export const top = `
 
 <section aria-labelledby="d-title" class="hero">
 <div class="hero-main">
-<p class="eyebrow kicker"><span aria-hidden="true" class="star"></span>Dossier 02 / Language infrastructure</p>
+<p class="eyebrow kicker"><span aria-hidden="true" class="star"></span>Dossier 03 / Language infrastructure</p>
 <h1 class="display" id="d-title">Basalam</h1>
 <p class="headline">A terminal UI framework for the Salam programming language.</p>
 <p class="merged"><span aria-hidden="true">✓</span> Merged into Salam's standard library · 12 Nov 2026</p>

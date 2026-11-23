@@ -76,7 +76,7 @@ export default function TelevimPage() {
 
       <section className="fp-project-hero">
         <div className="fp-project-hero-text">
-          <p className="fp-meta fp-project-kicker">Dossier 01 / Terminal application</p>
+          <p className="fp-meta fp-project-kicker">Dossier 02 / Terminal application</p>
           <h1 id="d-title" className="fp-project-title">
             Televim
           </h1>
