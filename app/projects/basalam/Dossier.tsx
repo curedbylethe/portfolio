@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import CaseStudy from '@/components/CaseStudy'
 import { top, flowHead, flowLedgers, resizeHead, after, panels } from './content'
 import BasalamArchitecture from './BasalamArchitecture'
@@ -31,6 +32,16 @@ export default function Dossier() {
           />
         </section>
         {html(after)}
+        <nav className="fp-project-pager fp-project-pager--pair" aria-label="Dossiers">
+          <Link href="/projects/televim">
+            <span>← Previous dossier</span>
+            <span className="fp-project-pager-title">Televim</span>
+          </Link>
+          <Link href="/projects">
+            <span>All dossiers →</span>
+            <span className="fp-project-pager-title">Catalogue</span>
+          </Link>
+        </nav>
       </div>
     </div>
   )

@@ -534,6 +534,8 @@ h2, h3 { color: var(--carbon); font-family: var(--font-body); letter-spacing: -.
 .fp-project-pager a { display: grid; gap: 4px; min-height: 44px; padding-block: 12px; text-decoration: none; transition: background-color 140ms ease; }
 .fp-project-pager a:hover { background: var(--ink-04); }
 .fp-project-pager a > span:first-child { color: var(--text-muted); font: 400 12px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.fp-project-pager--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.fp-project-pager--pair a:last-child { text-align: right; }
 .fp-project-pager-title { font: 400 clamp(1.25rem, 1.15rem + .5vw, 1.5rem)/1 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; }
 
 /* Televim retrospective. */

@@ -911,10 +911,14 @@ export default function TelevimPage() {
         </div>
       </section>
 
-      <nav className="fp-project-pager" aria-label="Dossiers">
+      <nav className="fp-project-pager fp-project-pager--pair" aria-label="Dossiers">
         <Link href="/projects">
           <span>← Back to</span>
           <span className="fp-project-pager-title">Catalogue</span>
+        </Link>
+        <Link href="/projects/basalam">
+          <span>Next dossier →</span>
+          <span className="fp-project-pager-title">Basalam</span>
         </Link>
       </nav>
     </article>
