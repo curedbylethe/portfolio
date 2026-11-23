@@ -17,15 +17,15 @@ export default function BasalamArchitecture() {
             <FlowBoard.Canvas label="Terminal rendering stages" />
             <FlowBoard.Toolbar label="Event to frame view" />
             <figcaption>
-              Conceptualized from{' '}
+              Based on the{' '}
               <a href="https://github.com/curedbylethe/basalam/blob/main/concepts/architecture.mdx">
-                Basalam&apos;s original architecture document
+                architecture
               </a>{' '}
               and{' '}
               <a href="https://github.com/curedbylethe/basalam/blob/main/concepts/event-loop.mdx">
-                event-loop guide
-              </a>
-              . Arrows show responsibilities, not exact function calls.
+                event-loop
+              </a>{' '}
+              docs. Arrows show responsibilities, not calls.
             </figcaption>
           </figure>
           <FlowBoard.NodeInspector />

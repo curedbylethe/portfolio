@@ -4,8 +4,8 @@ import BasalamPage from '../../app/projects/basalam/Dossier'
 
 it('preserves the event-to-frame paths and changes the selected trace', () => {
   render(<BasalamPage />)
-  expect(document.querySelector('#s04')?.textContent).toContain(
-    'The architecture separates producing an event from changing UI state and drawing the result.'
+  expect(document.querySelector('#s02')?.textContent).toContain(
+    'Producing an event, changing UI state and drawing the result are separate steps.'
   )
   expect(screen.getByRole('button', { name: /Step 1:/ })).toBeTruthy()
   fireEvent.click(screen.getByRole('button', { name: /Window resize/ }))

@@ -5,7 +5,7 @@ import './dossier.css'
 export const metadata = genPageMetadata({
   title: 'Basalam',
   description:
-    'How I designed Basalam, a retained-mode TUI framework for Salam, built Signal for portable terminal resize notifications, and saw both adopted into the Salam standard library.',
+    'Basalam, a terminal UI framework for the Salam language, and Signal, a safe terminal-resize library. Both were merged into Salam’s standard library.',
 })
 
 export default function BasalamPage() {

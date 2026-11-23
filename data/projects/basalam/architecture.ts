@@ -120,7 +120,7 @@ export const basalamArchitecture: FlowBoardData = {
           id: 'resize-widgets',
           nodeId: 'widgets',
           edgeIds: ['screen-widgets'],
-          description: 'the main thread then handles layout and drawing.',
+          description: 'The main thread then handles layout and drawing.',
         },
         {
           id: 'resize-buffer',
