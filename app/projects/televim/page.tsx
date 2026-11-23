@@ -133,18 +133,18 @@ export default function TelevimPage() {
 
       <nav className="fp-project-toc" aria-label="Dossier contents">
         <div>
-          <h2>Act I · Discover · 1 min</h2>
+          <h2>Overview · 1 min</h2>
           <ol>
             <li>
-              <a href="#d-title">
-                <span>The object</span>
+              <a href="#s01">
+                <span>What it does</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
                 <span className="fp-project-toc-number">01</span>
               </a>
             </li>
             <li>
               <a href="#s02">
-                <span>Origin</span>
+                <span>Why I built it</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
                 <span className="fp-project-toc-number">02</span>
               </a>
@@ -152,67 +152,130 @@ export default function TelevimPage() {
           </ol>
         </div>
         <div>
-          <h2>Act II · Dissect · 6 min</h2>
+          <h2>Engineering · 7 min</h2>
           <ol>
             <li>
               <a href="#s03">
-                <span>The brief</span>
+                <span>A keystroke, layer by layer</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
                 <span className="fp-project-toc-number">03</span>
               </a>
             </li>
             <li>
               <a href="#s04">
-                <span>A keystroke, layer by layer</span>
+                <span>Right-to-left text</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
                 <span className="fp-project-toc-number">04</span>
               </a>
             </li>
             <li>
               <a href="#s05">
-                <span>Featured challenge</span>
+                <span>Key decisions</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
                 <span className="fp-project-toc-number">05</span>
-              </a>
-            </li>
-            <li>
-              <a href="#s06">
-                <span>Decision records</span>
-                <span className="fp-project-toc-lead" aria-hidden="true" />
-                <span className="fp-project-toc-number">06</span>
               </a>
             </li>
           </ol>
         </div>
         <div>
-          <h2>Act III · Reflect · 3 min</h2>
+          <h2>Results · 2 min</h2>
           <ol>
             <li>
-              <a href="#s07">
+              <a href="#s06">
                 <span>Evidence</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
-                <span className="fp-project-toc-number">07</span>
+                <span className="fp-project-toc-number">06</span>
               </a>
             </li>
             <li>
-              <a href="#s08">
-                <span>Retrospective</span>
+              <a href="#s07">
+                <span>What held, what is open</span>
                 <span className="fp-project-toc-lead" aria-hidden="true" />
-                <span className="fp-project-toc-number">08</span>
+                <span className="fp-project-toc-number">07</span>
               </a>
             </li>
           </ol>
         </div>
       </nav>
 
-      <section id="s02" className="fp-project-origin" aria-labelledby="s02-h">
+      <section id="s01" className="fp-project-dsec" aria-labelledby="s01-h">
+        <header className="fp-project-section-head">
+          <span className="fp-project-section-number" aria-hidden="true">
+            01
+          </span>
+          <div className="fp-project-section-title">
+            <span className="fp-project-section-act">Overview</span>
+            <h2 id="s01-h">What it does</h2>
+          </div>
+          <p className="fp-project-section-read">30 s</p>
+        </header>
+        <div className="fp-project-brief">
+          <div className="fp-project-brief-col">
+            <h3>
+              <span>Keyboard first</span>
+              <span>A</span>
+            </h3>
+            <ul>
+              <li>
+                <b>Modal editing</b>Normal, Insert and Visual modes. Fix a typo three lines up
+                without touching the mouse.
+              </li>
+              <li>
+                <b>Conversation tools</b>Reactions, pinned messages, a local edit history and
+                on-demand translation.
+              </li>
+            </ul>
+          </div>
+          <div className="fp-project-brief-col">
+            <h3>
+              <span>Reliable and private</span>
+              <span>B</span>
+            </h3>
+            <ul>
+              <li>
+                <b>Offline history</b>Downloaded messages stay readable offline, in an encrypted
+                local archive.
+              </li>
+              <li>
+                <b>Sends survive outages</b>Text queued on disk goes out when the connection
+                returns.
+              </li>
+              <li>
+                <b>Read receipts on your terms</b>Sent when you open a chat, when you reply, or
+                never.
+              </li>
+            </ul>
+          </div>
+          <div className="fp-project-brief-col">
+            <h3>
+              <span>Media and languages</span>
+              <span>C</span>
+            </h3>
+            <ul>
+              <li>
+                <b>Voice notes in place</b>Playback with a progress bar, no external player.
+              </li>
+              <li>
+                <b>Right-to-left text</b>Persian, Arabic and Hebrew, with the reading mode picked
+                for kitty automatically.
+              </li>
+              <li>
+                <b>Images and video</b>Opened in your own viewer; stickers draw inline where the
+                terminal supports it.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="s02" className="fp-project-dsec" aria-labelledby="s02-h">
         <header className="fp-project-section-head">
           <span className="fp-project-section-number" aria-hidden="true">
             02
           </span>
           <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act I · Origin</span>
-            <h2 id="s02-h">Why it exists</h2>
+            <span className="fp-project-section-act">Overview</span>
+            <h2 id="s02-h">Why I built it</h2>
           </div>
           <p className="fp-project-section-read">30 s</p>
         </header>
@@ -223,76 +286,21 @@ export default function TelevimPage() {
             <span className="fp-project-origin-source">Product goal 2, docs/product.md</span>
           </blockquote>
           <div className="fp-project-origin-prose">
-            <div className="fp-project-author-note">
-              <span>WHY I BUILT IT</span>
-              <p>
-                Telegram was always open for work conversations and notes. With Docker containers,
-                browser tabs, and AI agents already running, its GUI felt like unnecessary overhead
-                and another distraction. Since I worked in the terminal with Helix, bringing
-                Telegram there was a natural choice.
-              </p>
-              <p>
-                I missed Vim&apos;s editing model, too. Fixing a typo three lines up or replacing a
-                word throughout a message shouldn&apos;t require a series of clicks. I wanted the
-                same speed and control over my conversations that I had over my code.
-              </p>
-              <h4>Design constraints</h4>
-              <ul>
-                <li>
-                  <strong>Keyboard first.</strong> Navigation and editing should remain usable
-                  without a mouse.
-                </li>
-                <li>
-                  <strong>Keep the client small.</strong> Avoid competing with the development
-                  environment for resources.
-                </li>
-                <li>
-                  <strong>Delegate, don&apos;t duplicate.</strong> Let dedicated applications handle
-                  media playback and viewing.
-                </li>
-                <li>
-                  <strong>Scope follows actual use.</strong> Features earn their place through
-                  practical needs, not parity with Telegram&apos;s desktop client.
-                </li>
-              </ul>
-              <h4>Early trade-offs</h4>
-              <ul>
-                <li>
-                  <strong>Private chats first.</strong> Groups and channels were left out as
-                  distractions. Open-source collaboration has since made group support necessary;
-                  today Televim still shows one-to-one chats only.
-                </li>
-                <li>
-                  <strong>Media stays external.</strong> Stickers render in supported terminals, but
-                  images, GIFs, and videos are handed to dedicated viewers.
-                </li>
-              </ul>
-            </div>
+            <p>
+              Telegram stayed open all day for work and notes. Next to Docker, browser tabs and AI
+              agents, its desktop app was one more heavy window and one more distraction. I already
+              worked in the terminal with Helix, so I brought Telegram there, with the Vim editing I
+              missed.
+            </p>
+            <p>
+              Three rules set the scope: every action on the keyboard; small enough not to compete
+              with the development environment, under a 50&nbsp;MB memory budget checked in CI; and
+              features only for real use, not parity with the desktop app. Groups, channels and bots
+              stay out.
+            </p>
           </div>
-          <aside className="fp-project-origin-side" aria-label="Artifacts from the record">
-            <div className="fp-project-artifact-card">
-              <span className="fp-project-artifact-label">Artifact · repository</span>
-              <p>Created 26 Sep 2026. v0.17.0 released 22 Nov 2026.</p>
-            </div>
-            <div className="fp-project-artifact-card">
-              <span className="fp-project-artifact-label">Artifact · sketch</span>
-              <p>
-                Lightweight, distraction free Telegram client; right where I&apos;m at home with the
-                Vim commands I&apos;m used to.
-              </p>
-            </div>
-          </aside>
         </div>
       </section>
-
-      <header id="act-2" className="fp-project-act">
-        <span className="fp-project-act-number">Act II</span>
-        <h2 className="fp-project-act-title">Dissect</h2>
-        <p className="fp-project-act-lede">
-          What the program had to do, how one keystroke moves through it, and the hardest problem it
-          met.
-        </p>
-      </header>
 
       <section id="s03" className="fp-project-dsec" aria-labelledby="s03-h">
         <header className="fp-project-section-head">
@@ -300,67 +308,54 @@ export default function TelevimPage() {
             03
           </span>
           <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act II · The brief</span>
-            <h2 id="s03-h">Goals, rules, exclusions</h2>
+            <span className="fp-project-section-act">Engineering · Architecture</span>
+            <h2 id="s03-h">A keystroke, layer by layer</h2>
           </div>
-          <p className="fp-project-section-read">1 min</p>
+          <p className="fp-project-section-read">2 min</p>
         </header>
-        <div className="fp-project-brief">
+        <p className="fp-project-dsec-intro">
+          Three rules shape the code. Pick an action below to follow it through the crates (Rust
+          packages) in order. Arrows are dependencies, not calls.
+        </p>
+        <div className="fp-project-brief fp-project-rules">
           <div className="fp-project-brief-col">
             <h3>
-              <span>Had to achieve</span>
-              <span>A</span>
+              <span>Pure core</span>
+              <span>1</span>
             </h3>
             <ul>
               <li>
-                <b>Modal editing</b>Normal, Insert and Visual modes for moving, writing and
-                searching.
-              </li>
-              <li>
-                <b>A small process</b>Under 50 MB of RAM, measured on every change to the code.
-              </li>
-              <li>
-                <b>A working protocol</b>Sign in, fetch the private chat list, send and receive over
-                MTProto, Telegram’s own protocol.
+                <code>domain</code> holds the logic and never imports <code>tokio</code> or{' '}
+                <code>ratatui</code>. Its one dependency is <code>thiserror</code>.
               </li>
             </ul>
           </div>
           <div className="fp-project-brief-col">
             <h3>
-              <span>Had to respect</span>
-              <span>B</span>
+              <span>One door to Telegram</span>
+              <span>2</span>
             </h3>
             <ul>
               <li>
-                <b>A pure domain</b>The core logic knows nothing of the runtime or the screen:{' '}
-                <code>domain</code> never imports <code>tokio</code> or <code>ratatui</code>; its
-                one dependency is <code>thiserror</code>.
-              </li>
-              <li>
-                <b>One door to the protocol</b>Only <code>telegram-framework</code> may touch{' '}
-                <code>grammers</code>, the Telegram library underneath, so a library change stays in
-                one crate.
-              </li>
-              <li>
-                <b>No plaintext session</b>The OS credential store, or an encrypted file.
+                Only <code>telegram-framework</code> touches <code>grammers</code>, the Telegram
+                library underneath. <code>make boundary</code> fails CI otherwise.
               </li>
             </ul>
           </div>
-          <div className="fp-project-brief-col fp-project-brief-col-excluded">
+          <div className="fp-project-brief-col">
             <h3>
-              <span>Left out on purpose</span>
-              <span>C</span>
+              <span>Sealed at rest</span>
+              <span>3</span>
             </h3>
             <ul>
               <li>
-                <b>Groups and channels</b>Kept out to stay focused and small. See D-03.
-              </li>
-              <li>
-                <b>An arena allocator</b>Named in the goals, dropped after measurement. See D-04.
+                The login and the message archive are encrypted on every write; neither keeps a
+                plaintext copy.
               </li>
             </ul>
           </div>
         </div>
+        <TelevimArchitecture />
       </section>
 
       <section id="s04" className="fp-project-dsec" aria-labelledby="s04-h">
@@ -369,27 +364,8 @@ export default function TelevimPage() {
             04
           </span>
           <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act II · Under the hood</span>
-            <h2 id="s04-h">A keystroke, layer by layer</h2>
-          </div>
-          <p className="fp-project-section-read">2 min</p>
-        </header>
-        <p className="fp-project-dsec-intro">
-          Pick something you can see the program do. The map numbers the crates (Rust packages) it
-          passes through, in order; the list says what each one does with it. Arrows on the map are
-          dependencies, not calls.
-        </p>
-        <TelevimArchitecture />
-      </section>
-
-      <section id="s05" className="fp-project-dsec" aria-labelledby="s05-h">
-        <header className="fp-project-section-head">
-          <span className="fp-project-section-number" aria-hidden="true">
-            05
-          </span>
-          <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act II · Featured challenge</span>
-            <h2 id="s05-h">The hardest problem</h2>
+            <span className="fp-project-section-act">Engineering · Featured challenge</span>
+            <h2 id="s04-h">The hardest problem</h2>
           </div>
           <p className="fp-project-section-read">3 min</p>
         </header>
@@ -410,19 +386,9 @@ export default function TelevimPage() {
                   </p>
                   <p>
                     No mainstream terminal applies the Unicode Bidirectional Algorithm by default.
-                    Yet every terminal that draws these scripts runs a shaper, the font engine that
-                    joins letters, and the shaper reverses right-to-left runs on its own.
-                  </p>
-                </>
-              ),
-            },
-            {
-              title: 'What you see',
-              content: (
-                <>
-                  <p>
-                    A two-word Arabic draft, sent to kitty 0.49.2 in logical order. Each word reads
-                    correctly. The words are in the wrong order.
+                    Yet terminals that draw these scripts run a shaper, the font engine that joins
+                    letters, and kitty’s shaper reverses each right-to-left run on its own. A
+                    two-word message comes out with each word right and the words swapped.
                   </p>
                   <figure className="fp-project-case-exhibit">
                     <div className="fp-project-exhibit-bar">
@@ -450,9 +416,8 @@ export default function TelevimPage() {
                       </div>
                     </div>
                     <figcaption>
-                      <b>Drawn, not captured.</b> The shaper reverses each right-to-left run
-                      separately, and a space ends a run, so the first word lands on the left.
-                      Arrows show the direction the letters read.
+                      <b>Drawn, not captured.</b> A space ends a run, so each word is reversed on
+                      its own and the first word lands on the left.
                     </figcaption>
                   </figure>
                 </>
@@ -467,24 +432,22 @@ export default function TelevimPage() {
                     Pango reverse runs whatever Televim emits.
                   </li>
                   <li>
-                    <b>The terminal cannot be detected.</b> Bidi and shaping are settings, not
-                    identity, and no probe of the far end survives tmux or ssh.
+                    <b>Terminals rarely say who they are.</b> Bidi and shaping are settings, not
+                    identity. Only kitty names itself, through <code>KITTY_WINDOW_ID</code>,{' '}
+                    <code>TERM</code> or <code>TERM_PROGRAM</code>.
                   </li>
                   <li>
                     <b>Tests cannot see the result.</b> <code>ratatui</code>’s test backend has no
-                    bidi and no shaper: it proves which cells were written, not how they were drawn.
+                    shaper: it proves which cells were written, not how they were drawn.
                   </li>
                 </ul>
               ),
             },
             {
-              title: 'Alternatives',
+              title: 'Options',
               content: (
                 <>
-                  <p>
-                    Three ways to emit a line, on two kinds of terminal. Each verdict carries a word
-                    as well as a fill.
-                  </p>
+                  <p>Three ways to emit a line, on two kinds of terminal.</p>
                   <div
                     className="fp-project-case-matrix"
                     role="table"
@@ -508,15 +471,14 @@ export default function TelevimPage() {
                         role="rowheader"
                         className="fp-project-case-mode fp-project-case-chosen"
                       >
-                        Terminal<small>logical order · default</small>
+                        Terminal<small>logical order · default off kitty</small>
                       </span>
                       <span
                         role="cell"
                         data-col="Shaping terminals"
                         className="fp-project-case-verdict is-part"
                       >
-                        <b>Partly</b>One word reads right; on kitty, several words come out in the
-                        wrong order.
+                        <b>Partly</b>One word reads right; on kitty, several words come out swapped.
                       </span>
                       <span
                         role="cell"
@@ -546,15 +508,18 @@ export default function TelevimPage() {
                       </span>
                     </div>
                     <div role="row">
-                      <span role="rowheader" className="fp-project-case-mode">
-                        Words<small>word order only · opt-in</small>
+                      <span
+                        role="rowheader"
+                        className="fp-project-case-mode fp-project-case-chosen"
+                      >
+                        Words<small>word order only · default on kitty</small>
                       </span>
                       <span
                         role="cell"
                         data-col="Shaping terminals"
                         className="fp-project-case-verdict is-yes"
                       >
-                        <b>Reads right</b>On kitty: words reversed, letters left to the shaper.
+                        <b>Reads right</b>On kitty: Televim swaps the words, the shaper the letters.
                       </span>
                       <span
                         role="cell"
@@ -566,21 +531,21 @@ export default function TelevimPage() {
                     </div>
                   </div>
                   <p>
-                    A fourth option, detecting the terminal and choosing for it, was rejected for
-                    the reason in station 3.
+                    Words is only safe where the terminal reverses each word. On one that reverses
+                    the whole line, the words would be reversed twice, so Televim picks it only
+                    where it can name the terminal.
                   </p>
                 </>
               ),
             },
             {
-              title: 'Implementation',
+              title: 'What shipped',
               content: (
                 <>
                   <p>
-                    The default stays logical order, byte for byte what the binary already emitted:
-                    on terminals that shape, each word reads right, and left-to-right text is
-                    untouched. The other two modes are one configuration key for the whole machine,
-                    not per terminal, so an ssh hop keeps the setting it was launched with.
+                    The default, <code>bidi = "auto"</code>, resolves to Words on kitty and to
+                    Terminal elsewhere. On xterm or alacritty, one key opts into Visual for the
+                    whole machine, so an ssh hop keeps the setting it was launched with.
                   </p>
                   <figure className="fp-project-case-code">
                     <figcaption>
@@ -593,49 +558,31 @@ export default function TelevimPage() {
                       </code>
                     </pre>
                   </figure>
-                  <p>
-                    Underneath, <code>tui/src/bidi.rs</code> decides which way a message reads and
-                    which logical ranges each wrapped row draws. A zero-width non-joiner counts as a
-                    word break and a row break, so a Persian compound such as{' '}
-                    <bdi lang="fa">کتاب‌ها</bdi> wraps where a reader hears two words.
-                  </p>
+                  <ul className="fp-project-case-evidence">
+                    <li>
+                      <span>Exception</span>
+                      <span>
+                        The focused input bar draws spaces as <code>·</code>, which kitty does not
+                        treat as a run break, so the bar hands its row over as stored.
+                      </span>
+                    </li>
+                    <li>
+                      <span>Wrapping</span>
+                      <span>
+                        A zero-width non-joiner counts as a word break, so a Persian compound such
+                        as <bdi lang="fa">کتاب‌ها</bdi> wraps where a reader hears two words.
+                      </span>
+                    </li>
+                    <li>
+                      <span>Checked</span>
+                      <span>
+                        On kitty 0.50.0 with scripted screenshots (
+                        <code>scripts/rtl/kitty_shots.py</code>); <code>make test</code> pins the
+                        cell widths it rests on.
+                      </span>
+                    </li>
+                  </ul>
                 </>
-              ),
-            },
-            {
-              title: 'Evidence',
-              content: (
-                <ul className="fp-project-case-evidence">
-                  <li>
-                    <span>Observed</span>
-                    <span>
-                      kitty 0.49.2, captured by <code>scripts/rtl/kitty_shots.py</code>: the per-run
-                      reversal behind station 2.
-                    </span>
-                  </li>
-                  <li>
-                    <span>Automated</span>
-                    <span>
-                      <code>make test</code> pins the width it rests on: <code>columns("لا")</code>{' '}
-                      is 1, <code>drawn_cells("لا")</code> is 2.
-                    </span>
-                  </li>
-                  <li>
-                    <span>Automated</span>
-                    <span>
-                      A wrap property, “a row is never cut inside a cluster”, runs with zero-width
-                      non-joiner texts in its loop.
-                    </span>
-                  </li>
-                  <li>
-                    <span>Manual</span>
-                    <span>
-                      <code>make rtl-shots</code>, outside <code>make ci</code> and without
-                      assertions: a person reads a scene for the last letter and the clock beside
-                      it.
-                    </span>
-                  </li>
-                </ul>
               ),
             },
             {
@@ -647,11 +594,11 @@ export default function TelevimPage() {
                       xterm and alacritty render right-to-left text wrong in the default mode.
                     </li>
                     <li>
-                      In Visual mode, Arabic and Persian letters are not contextually joined. That
-                      needs a shaping library.
+                      In Visual mode, Arabic and Persian letters are not joined. That needs a
+                      shaping library.
                     </li>
                     <li>Brackets are not mirrored inside a right-to-left run.</li>
-                    <li>The default mode’s correctness cannot be proved inside the repository.</li>
+                    <li>No test in the repository can prove how a real terminal draws the text.</li>
                   </ul>
                   <a
                     className="fp-project-case-link"
@@ -666,20 +613,19 @@ export default function TelevimPage() {
         />
       </section>
 
-      <section id="s06" className="fp-project-dsec" aria-labelledby="s06-h">
+      <section id="s05" className="fp-project-dsec" aria-labelledby="s05-h">
         <header className="fp-project-section-head">
           <span className="fp-project-section-number" aria-hidden="true">
-            06
+            05
           </span>
           <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act II · Decision records</span>
-            <h2 id="s06-h">Four more choices</h2>
+            <span className="fp-project-section-act">Engineering · Decision records</span>
+            <h2 id="s05-h">Six choices and their costs</h2>
           </div>
-          <p className="fp-project-section-read">1–4 min</p>
+          <p className="fp-project-section-read">2–5 min</p>
         </header>
         <p className="fp-project-dsec-intro">
-          Each line is the choice and its cost. Open one for the problem, the options and the quoted
-          reasoning.
+          Each line is a choice and what it cost. Open one for the problem and the outcome.
         </p>
         <div className="fp-project-records">
           <DecisionRecord
@@ -691,8 +637,8 @@ export default function TelevimPage() {
             <dl className="fp-project-decision-body">
               <dt>Problem</dt>
               <dd>
-                Once a protocol type reaches the UI, every library change becomes a UI change, on
-                someone else’s release cadence.
+                Once a protocol type reaches the UI, every library release becomes a UI change, on
+                someone else’s schedule.
               </dd>
               <dt>Considered</dt>
               <dd>
@@ -706,18 +652,13 @@ export default function TelevimPage() {
                   </li>
                 </ol>
               </dd>
-              <dt>Consequence</dt>
+              <dt>Outcome</dt>
               <dd>
                 <code>proto</code>, <code>domain</code> and <code>tui</code> never see a{' '}
                 <code>grammers</code> type, and <code>make boundary</code> proves it on every CI
                 run.
               </dd>
             </dl>
-            <blockquote className="fp-project-record-quote">
-              “By writing our own thin wrapper over <code>grammers-client</code>, we own the
-              abstraction, keep the dependency surface minimal, and can tailor the API exactly to{' '}
-              <code>televim</code>’s needs.”
-            </blockquote>
             <a
               className="fp-project-record-source"
               href="https://github.com/curedbylethe/televim/blob/main/docs/decisions.md"
@@ -727,49 +668,122 @@ export default function TelevimPage() {
           </DecisionRecord>
           <DecisionRecord
             id="D-02"
-            title="The session is always sealed, and written whole"
-            choice="encryption on every write, no plaintext fallback."
-            cost="no key, no session; a lost passphrase stays lost."
+            title="The login stays sealed, and the key moved to a file"
+            choice="a random key in a 0600 file beside the session."
+            cost="a process running as you, or a backup of both files, can read it."
           >
             <dl className="fp-project-decision-body">
               <dt>Problem</dt>
               <dd>
-                A session file is a permanent authorisation key. A plain overwrite can leave a
-                truncated file; a plaintext copy is an exposure.
+                The key first lived in the macOS keychain. Unsigned builds asked for the keychain
+                password on every launch.
               </dd>
               <dt>Considered</dt>
               <dd>
                 <ol className="fp-project-options">
                   <li>
-                    An <code>encrypt_session</code> switch, or an encrypting wrapper over the file
-                    store.
+                    Keep the keychain and make fewer calls to it. Unsigned rebuilds still prompted.
                   </li>
                   <li className="is-chosen">
-                    Seal every write. Key from the environment first, the OS keyring second, nowhere
-                    else.
+                    A 32-byte random key in a <code>0600</code> file. A passphrase or a configured
+                    key file still takes precedence.
                   </li>
                 </ol>
               </dd>
-              <dt>Consequence</dt>
+              <dt>Outcome</dt>
               <dd>
-                Writes go to a sibling temp file restricted to <code>0600</code>, then rename over
-                the target. A kill mid-write leaves the previous session or none, never a partial
-                one.
+                No keychain prompt on launch. Older keychain sessions migrate once and the keychain
+                entry is kept, so nothing becomes unrecoverable. Every write is still sealed, with
+                no plaintext fallback.
               </dd>
             </dl>
             <blockquote className="fp-project-record-quote">
-              “A switch would be a second, plaintext write path, which is the exposure the envelope
-              exists to close […] There is no plaintext fallback.”
+              “The tradeoff is deliberate: the key sits beside the ciphertext, protected by{' '}
+              <code>0600</code> and full-disk encryption rather than the OS credential store.”{' '}
+              <span>product.md</span>
             </blockquote>
-            <a
-              className="fp-project-record-source"
-              href="https://github.com/curedbylethe/televim/blob/main/docs/decisions.md"
-            >
-              decisions.md ↗
-            </a>
           </DecisionRecord>
           <DecisionRecord
             id="D-03"
+            title="History is an encrypted archive, not a cache"
+            choice="a per-account SQLite archive, each message sealed on its own."
+            cost="SQLite and the store add about 1.8 MB to the binary."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>
+                The old history cache evicted messages, so conversations were downloaded again, and
+                every save rewrote one encrypted file.
+              </dd>
+              <dt>Outcome</dt>
+              <dd>
+                Each record carries its own address inside the seal, so a record written in
+                plaintext, moved to another chat or replayed is refused on read. A size limit (1 GiB
+                by default) stops older history instead of deleting any. When the open conversation
+                came from the archive, a restart or reconnect asks only for newer messages.
+              </dd>
+            </dl>
+            <a
+              className="fp-project-record-source"
+              href="https://github.com/curedbylethe/televim/pull/215"
+            >
+              PR #215 ↗
+            </a>
+          </DecisionRecord>
+          <DecisionRecord
+            id="D-04"
+            title="Text survives a lost connection"
+            choice="a durable outbox on disk, one send at a time."
+            cost="retrying a timed-out send can post it twice."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>
+                Text typed offline was lost. And a send can time out after Telegram has already
+                accepted it.
+              </dd>
+              <dt>Outcome</dt>
+              <dd>
+                Queued and failed text is written atomically to a <code>0600</code> file and
+                survives restarts. A send with no answer in 15 seconds is marked failed and never
+                retried on its own; <code>:retry</code> sends it again when you choose. Media
+                uploads still live in memory only.
+              </dd>
+            </dl>
+            <blockquote className="fp-project-record-quote">
+              “Telegram may accept the request before its reply is lost, so sending timed-out text
+              again can duplicate it.” <span>decisions.md</span>
+            </blockquote>
+          </DecisionRecord>
+          <DecisionRecord
+            id="D-05"
+            title="A read receipt waits for the reader"
+            choice="three modes: on open (default), on reply, off."
+            cost="terminal focus is only a proxy for attention."
+          >
+            <dl className="fp-project-decision-body">
+              <dt>Problem</dt>
+              <dd>
+                Opening a chat sent a read receipt, even in a terminal window hidden behind other
+                work.
+              </dd>
+              <dt>Outcome</dt>
+              <dd>
+                While the terminal reports it is unfocused, the receipt is held, not dropped, and
+                goes out when focus returns. A send confirmation that arrives after you switch chats
+                still marks the chat it came from. Terminals that never report focus behave as
+                before.
+              </dd>
+            </dl>
+            <a
+              className="fp-project-record-source"
+              href="https://github.com/curedbylethe/televim/pull/212"
+            >
+              PR #212 ↗
+            </a>
+          </DecisionRecord>
+          <DecisionRecord
+            id="D-06"
             title="Private conversations, and nothing else"
             choice="one-to-one chats only."
             cost="people whose Telegram lives in groups are not served."
@@ -780,10 +794,10 @@ export default function TelevimPage() {
                 Groups, channels and bots multiply the state a terminal client has to hold, filter
                 and draw.
               </dd>
-              <dt>Consequence</dt>
+              <dt>Outcome</dt>
               <dd>
                 The filter sits in the protocol wrapper, so nothing else reaches the domain or the
-                screen. A bot’s direct messages are searched but not shown.
+                screen.
               </dd>
             </dl>
             <blockquote className="fp-project-record-quote">
@@ -791,55 +805,23 @@ export default function TelevimPage() {
               <span>product.md, goal 3</span>
             </blockquote>
           </DecisionRecord>
-          <DecisionRecord
-            id="D-04"
-            title="No arena allocator, by measurement"
-            choice="the system allocator."
-            cost="one original goal dropped on the evidence."
-          >
-            <dl className="fp-project-decision-body">
-              <dt>Problem</dt>
-              <dd>The original goals named an arena allocator as a route to the memory ceiling.</dd>
-              <dt>Consequence</dt>
-              <dd>
-                Per-frame allocations die with the frame. Resident memory is held by the message
-                window, the chat list and the terminal buffers, which an arena cannot lower. A frame
-                cost 0.518 ms against a 16 ms budget when this was decided.
-              </dd>
-            </dl>
-            <a
-              className="fp-project-record-source"
-              href="https://github.com/curedbylethe/televim/blob/main/docs/decisions.md"
-            >
-              decisions.md ↗
-            </a>
-          </DecisionRecord>
         </div>
       </section>
 
-      <header id="act-3" className="fp-project-act">
-        <span className="fp-project-act-number">Act III</span>
-        <h2 className="fp-project-act-title">Reflect</h2>
-        <p className="fp-project-act-lede">
-          What has been measured, what has not, and what is still open.
-        </p>
-      </header>
-
-      <section id="s07" className="fp-project-dsec" aria-labelledby="s07-h">
+      <section id="s06" className="fp-project-dsec" aria-labelledby="s06-h">
         <header className="fp-project-section-head">
           <span className="fp-project-section-number" aria-hidden="true">
-            07
+            06
           </span>
           <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act III · Evidence</span>
-            <h2 id="s07-h">Against the brief</h2>
+            <span className="fp-project-section-act">Results · Evidence</span>
+            <h2 id="s06-h">Measured on v0.17.0</h2>
           </div>
-          <p className="fp-project-section-read">1–5 min</p>
+          <p className="fp-project-section-read">1–2 min</p>
         </header>
         <p className="fp-project-dsec-intro">
-          Each target from <code>product.md</code> against its v0.17.0 measurement, drawn to scale.
-          Every figure sits inside its budget; only the brief archive write peak comes close. None
-          comes from a connected session under load.
+          Each target from <code>product.md</code> against its measurement, drawn to scale. Every
+          figure sits inside its budget; only the brief archive write peak comes close.
         </p>
         <div className="fp-project-evidence">
           <Progress items={evidence} />
@@ -853,8 +835,8 @@ export default function TelevimPage() {
               <dd>Darwin arm64, one machine</dd>
               <dt>Method</dt>
               <dd>
-                Median of five make measure reports, each a median of five launches. Write peak: an
-                archive stress test, four runs
+                Median of five <code>make measure</code> reports, each a median of five launches.
+                Write peak: an archive stress test, four runs
               </dd>
               <dt>Record</dt>
               <dd>
@@ -872,26 +854,22 @@ export default function TelevimPage() {
                 </li>
                 <li>End-to-end latency: the terminal’s read and paint sit outside the probe.</li>
                 <li>Linux or Windows.</li>
-                <li>
-                  The 20–30 MB stretch target. Measured memory already sits below it, but no run was
-                  set up to test it.
-                </li>
               </ul>
             </div>
           </aside>
         </div>
       </section>
 
-      <section id="s08" className="fp-project-dsec" aria-labelledby="s08-h">
+      <section id="s07" className="fp-project-dsec" aria-labelledby="s07-h">
         <header className="fp-project-section-head">
           <span className="fp-project-section-number" aria-hidden="true">
-            08
+            07
           </span>
           <div className="fp-project-section-title">
-            <span className="fp-project-section-act">Act III · Retrospective</span>
-            <h2 id="s08-h">Looking back</h2>
+            <span className="fp-project-section-act">Results · Retrospective</span>
+            <h2 id="s07-h">What held, what is open</h2>
           </div>
-          <p className="fp-project-section-read">1 min</p>
+          <p className="fp-project-section-read">30 s</p>
         </header>
         <div className="fp-project-retro">
           <div className="fp-project-retro-col">
@@ -899,8 +877,9 @@ export default function TelevimPage() {
             <div className="fp-project-retro-item">
               <h4>What held</h4>
               <p>
-                The architecture rule is mechanical: a build fails when it breaks. Goals were tested
-                rather than assumed, and one was dropped on the evidence.
+                The architecture rules are mechanical: a build fails when one breaks. Goals were
+                tested, not assumed. The arena allocator in the original plan was dropped once
+                measurement showed memory sits in data, not in per-frame allocations.
               </p>
             </div>
             <div className="fp-project-retro-item">
@@ -917,7 +896,7 @@ export default function TelevimPage() {
               <span>Open · </span>Global search has no sender filter.
             </li>
             <li>
-              <span>Open · </span>One account is open per process.
+              <span>Open · </span>Several accounts can be stored, but one is open at a time.
             </li>
             <li>
               <span>Open · </span>Release binaries are unsigned and not notarized.
