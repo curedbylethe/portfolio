@@ -2,6 +2,7 @@ import Link from 'next/link'
 import CaseStudy from '@/components/CaseStudy'
 import DecisionRecord from '@/components/DecisionRecord'
 import { genPageMetadata } from '../../seo'
+import StateCaseStudy from './StateCaseStudy'
 import './soorin.css'
 
 export const metadata = genPageMetadata({
@@ -458,33 +459,34 @@ export default function SoorinPage() {
             The company&apos;s investment-advisory app was already in users&apos; hands when I took
             over its frontend. The job was to extend it without making it less reliable.
           </p>
+          <div className="fp-project-records">
+            <DecisionRecord
+              id="M-01"
+              title="Keep data visible while it refreshes"
+              choice="a shared query cache, using TanStack Query for server state."
+              cost="migrating data access and managing cache freshness and invalidation."
+            >
+              <dl className="fp-project-decision-body">
+                <dt>Problem</dt>
+                <dd>
+                  In the Ionic React app, returning to a screen could trigger another request and
+                  replace its content with a loading indicator. People checking financial
+                  information had to wait again for data they had already seen.
+                </dd>
+                <dt>Outcome</dt>
+                <dd>
+                  Previously fetched data could remain visible while a request refreshed it in the
+                  background. Returning to a screen no longer needed to start with a blocking loader
+                  when its data was still cached.
+                </dd>
+              </dl>
+            </DecisionRecord>
+          </div>
           <p>
             I added the two-factor sign-in flow, push notifications, in-app support with ticket
             attachments, a referral programme, subscription status, onboarding, and a risk
             questionnaire that suggests suitable advisers.
           </p>
-          <div className="fp-project-records">
-            <DecisionRecord
-              id="M-01"
-              title="One data layer instead of a request per screen"
-              choice="a shared query cache, using TanStack Query."
-              cost="migrating every screen's data access."
-            >
-              <dl className="fp-project-decision-body">
-                <dt>Problem</dt>
-                <dd>
-                  Each screen fetched its own data in its own way. Requests could outlive the screen
-                  that made them, and loading and error states varied from screen to screen.
-                </dd>
-                <dt>Outcome</dt>
-                <dd>
-                  Requests are cached and cancellable, and every main screen shares the same
-                  loading, error, and pull-to-refresh behaviour. Customer data later stayed
-                  available offline.
-                </dd>
-              </dl>
-            </DecisionRecord>
-          </div>
         </section>
 
         <section className="dossier-section" id="fund" aria-labelledby="fund-title">
@@ -535,53 +537,38 @@ export default function SoorinPage() {
           <p className="figcap">
             Figure 04 / Capability groups, not the production component or dependency graph.
           </p>
+          <StateCaseStudy />
           <div className="bullet-head">
             <h3>Decisions</h3>
             <span className="micro muted">Open one for the problem and the outcome</span>
           </div>
           <div className="fp-project-records">
             <DecisionRecord
-              id="F-01"
-              title="One typed store pattern for the whole app"
-              choice="a typed store layer on Zustand's vanilla core."
-              cost="a layer of our own to document and maintain."
-            >
-              <dl className="fp-project-decision-body">
-                <dt>Problem</dt>
-                <dd>
-                  Features as different as navigation, notifications, and fund data each need state.
-                  Without a shared pattern, every feature invents its own.
-                </dd>
-                <dt>Outcome</dt>
-                <dd>
-                  Every store has the same shape, with event subscriptions, state history, and
-                  storage persistence available when a feature needs them. The store layer has its
-                  own documentation.
-                </dd>
-              </dl>
-            </DecisionRecord>
-            <DecisionRecord
               id="F-02"
-              title="Pre-render the shell, hydrate the data"
-              choice="pages pre-rendered at build time, with data loaded on the client."
-              cost="no per-request server rendering; the first client render must match."
+              title="Pre-render the shell, keep static deployment"
+              choice="pages pre-rendered at build time, with dynamic data loaded on the client."
+              cost="live data requires client requests; the first client render must match the generated HTML."
             >
               <dl className="fp-project-decision-body">
                 <dt>Problem</dt>
                 <dd>
-                  The app should deploy as static files, yet stores hold browser-only state such as
-                  theme and sidebar position. A mismatch between the pre-rendered page and the first
-                  client render shows as a flash or a hydration error.
+                  The platform was primarily data-driven, with forms, tables, and charts throughout
+                  the interface. I initially considered request-time server rendering, but the
+                  product needed to fit the static deployment model used by other applications.
                 </dd>
                 <dt>Outcome</dt>
                 <dd>
-                  Each store provides a separate server snapshot, so the first render is consistent,
-                  and saved preferences apply without a flash. Permission checks shape the
-                  interface; the backend still makes every authorization decision.
+                  The frontend could be served as static files without a request-time rendering
+                  service. I designed the store layer with separate server snapshots to keep
+                  hydration consistent when state depended on browser-only preferences.
                 </dd>
               </dl>
             </DecisionRecord>
           </div>
+          <p>
+            Permission checks shape the interface; the backend still makes every authorization
+            decision.
+          </p>
           <div className="two-up">
             <article>
               <h3>Ready to hand over</h3>
