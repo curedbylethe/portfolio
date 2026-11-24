@@ -359,9 +359,10 @@ export default function SoorinPage() {
             <article>
               <h3>The information layer</h3>
               <p>
-                I owned most of the configurable table that the trading and options views are built
-                on. Users define their own columns, combine filters, set sort priority, resize and
-                reorder headers, and save named presets to their account.
+                A colleague started the configurable table that the trading and options views are
+                built on; I took it over and made most of its later changes. Users define their own
+                columns, combine filters, set sort priority, resize and reorder headers, and save
+                named presets to their account.
               </p>
             </article>
             <article>
