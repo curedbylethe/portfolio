@@ -3,6 +3,7 @@ import CaseStudy from '@/components/CaseStudy'
 import DecisionRecord from '@/components/DecisionRecord'
 import { genPageMetadata } from '../../seo'
 import StateCaseStudy from './StateCaseStudy'
+import TableCaseStudy from './TableCaseStudy'
 import './soorin.css'
 
 export const metadata = genPageMetadata({
@@ -401,50 +402,7 @@ export default function SoorinPage() {
           <p className="figcap">
             Figure 02 / Conceptual map of user-facing capabilities, not internal data flow.
           </p>
-          <div className="bullet-head">
-            <h3>Decisions</h3>
-            <span className="micro muted">Open one for the problem and the outcome</span>
-          </div>
-          <div className="fp-project-records">
-            <DecisionRecord
-              id="T-01"
-              title="Save what the user changed, not the whole table"
-              choice="presets that store only the user's changes."
-              cost="defaults and changes merge on every load."
-            >
-              <dl className="fp-project-decision-body">
-                <dt>Problem</dt>
-                <dd>
-                  A preset saved as a full snapshot freezes the table as it was. New default columns
-                  never reach users with older presets.
-                </dd>
-                <dt>Outcome</dt>
-                <dd>
-                  Saved presets keep the user&apos;s intent, and improvements to the defaults still
-                  arrive.
-                </dd>
-              </dl>
-            </DecisionRecord>
-            <DecisionRecord
-              id="T-02"
-              title="The newest request that matters wins"
-              choice="cancel lower-priority requests when a higher-priority one starts."
-              cost="each request carries a priority to track."
-            >
-              <dl className="fp-project-decision-body">
-                <dt>Problem</dt>
-                <dd>
-                  Filters, live refreshes, and saved settings all fetch the same data. A slow
-                  response could land last and overwrite a fresher one.
-                </dd>
-                <dt>Outcome</dt>
-                <dd>
-                  Stale results no longer replace fresh ones. Later profiling passes kept
-                  configuration references stable, and released observers closed a memory leak.
-                </dd>
-              </dl>
-            </DecisionRecord>
-          </div>
+          <TableCaseStudy />
         </section>
 
         <section className="dossier-section" id="mobile" aria-labelledby="mobile-title">

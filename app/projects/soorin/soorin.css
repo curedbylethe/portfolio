@@ -801,4 +801,247 @@
       -webkit-print-color-adjust: exact;
     }
   }
+
+  /* Data grid case study. Reuses the state-* blocks; these cover its own diagrams. */
+  .table-schema,
+  .table-pipeline,
+  .table-outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .table-schema > div,
+  .table-pipeline li,
+  .table-tiers > div {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .table-schema h4 {
+    margin: 6px 0 10px;
+    font-size: 16px;
+  }
+  .table-schema .micro,
+  .table-pipeline .micro,
+  .table-tiers .micro,
+  .table-viewport .table-pinned .micro {
+    color: var(--accent);
+  }
+  .table-field {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 8px 0;
+    border-top: 1px solid var(--line-faint);
+    font: 12px/1.4 var(--font-mono);
+  }
+  .table-field small {
+    font: 11px/1.4 var(--font-body);
+    color: var(--text-muted);
+  }
+  .table-field.new {
+    color: var(--accent);
+  }
+  .table-field.old {
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+  .table-merge-rule {
+    padding: 12px;
+    border: 1px solid var(--accent);
+    text-align: center;
+    font: 13px/1.5 var(--font-mono);
+    color: var(--accent);
+  }
+  .table-pipeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .table-pipeline li {
+    position: relative;
+  }
+  .table-pipeline li:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    top: 45%;
+    right: -10px;
+    z-index: 1;
+    color: var(--accent);
+    font-size: 15px;
+  }
+  .table-pipeline strong {
+    display: block;
+    margin: 6px 0;
+    font: 400 16px/1.2 var(--font-display);
+    text-transform: uppercase;
+  }
+  .table-pipeline p,
+  .table-tiers p,
+  .table-outcomes p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+  .table-input {
+    display: block;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line-faint);
+    font: 500 10px/1.5 var(--font-mono);
+    color: var(--text-muted);
+  }
+  .table-tiers {
+    display: grid;
+    gap: 8px;
+  }
+  .table-tiers > div {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr) 110px;
+    gap: 12px;
+    align-items: center;
+    padding: 14px;
+  }
+  .table-tiers b {
+    font-size: 13px;
+  }
+  .table-tiers .micro {
+    text-align: right;
+  }
+  .table-timeline {
+    display: grid;
+    grid-template-columns: 80px repeat(5, minmax(0, 1fr));
+    gap: 4px;
+    align-items: stretch;
+    font: 11px/1.4 var(--font-mono);
+  }
+  /* Time runs along columns; each lane is a row. Phones swap the axes. */
+  .table-timeline > div {
+    display: flex;
+    align-items: center;
+    grid-column: var(--from) / var(--to);
+    grid-row: var(--lane);
+    min-height: 33px;
+    padding: 5px;
+  }
+  .table-timeline .tick {
+    font-size: 10px;
+    color: var(--text-muted);
+  }
+  .table-timeline .bar {
+    justify-content: center;
+    text-align: center;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .table-timeline .bar.em {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .table-viewport {
+    display: grid;
+    grid-template-columns: 95px minmax(0, 1fr);
+    min-height: 155px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .table-viewport > div {
+    padding: 10px;
+    overflow: hidden;
+  }
+  .table-viewport .micro {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .table-viewport .table-pinned {
+    border-right: 2px solid var(--accent);
+  }
+  .table-mock-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 20px;
+    border-top: 1px solid var(--line-faint);
+  }
+  .table-mock-row i {
+    width: 40px;
+    height: 5px;
+    background: var(--line);
+  }
+  .table-mock-row i:nth-child(2) {
+    width: 65px;
+  }
+  .table-mock-row i:nth-child(3) {
+    width: 35px;
+  }
+  .table-outcomes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+  .table-outcomes article {
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .table-outcomes h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+  }
+  .table-outcomes p {
+    font-size: 14px;
+  }
+  @media (max-width: 640px) {
+    .table-schema,
+    .table-pipeline,
+    .table-outcomes {
+      grid-template-columns: 1fr;
+    }
+    .table-pipeline li:not(:last-child)::after {
+      content: '↓';
+      top: auto;
+      right: 50%;
+      bottom: -14px;
+    }
+    .table-tiers > div {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+    .table-tiers .micro {
+      text-align: left;
+    }
+    .table-viewport {
+      grid-template-columns: 75px minmax(0, 1fr);
+    }
+    .table-timeline {
+      grid-template-columns: 24px repeat(3, minmax(0, 1fr));
+      grid-auto-rows: minmax(44px, auto);
+      font-size: 10px;
+    }
+    .table-timeline > div {
+      grid-column: var(--lane);
+      grid-row: var(--from) / var(--to);
+      padding: 4px 3px;
+    }
+    .table-timeline .lane {
+      justify-content: center;
+      min-height: 0;
+      text-align: center;
+    }
+    [id^='table-case-'].fp-project-case-station {
+      padding-inline: 14px;
+    }
+  }
+  @media print {
+    .table-schema,
+    .table-pipeline,
+    .table-tiers,
+    .table-timeline,
+    .table-viewport {
+      break-inside: avoid;
+    }
+  }
 }
