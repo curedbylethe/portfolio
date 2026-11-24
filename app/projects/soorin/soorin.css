@@ -533,4 +533,272 @@
       display: none;
     }
   }
+
+  /* State architecture case study. */
+  .fp-project-case-body h4 {
+    margin: 8px 0 0;
+    font: 400 19px/1.25 var(--font-display);
+    text-transform: uppercase;
+  }
+  .fp-project-case-body p code {
+    font: 0.9em var(--font-mono);
+  }
+  .state-pull {
+    margin: 4px 0;
+    padding: 6px 0 6px 20px;
+    border-left: 3px solid var(--accent);
+    font-size: 20px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .state-problems {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid var(--line);
+  }
+  .state-problems article {
+    padding: 16px;
+  }
+  .state-problems article + article {
+    border-left: 1px solid var(--line-faint);
+  }
+  .state-problems .micro,
+  .state-instance-head .micro,
+  .state-compare .micro {
+    color: var(--accent);
+  }
+  .state-problems h4 {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  .state-problems p,
+  .state-compare p,
+  .state-instance p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-muted);
+  }
+  .state-figure {
+    display: grid;
+    gap: 14px;
+    margin: 4px 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    background: var(--paper-sunk);
+  }
+  .state-compare {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .state-compare > div {
+    min-width: 0;
+    display: grid;
+    align-content: start;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+  .state-compare svg {
+    display: block;
+    width: 100%;
+    max-width: 410px;
+    height: auto;
+    margin-inline: auto;
+  }
+  .state-compare svg text {
+    font: 10px var(--font-body);
+    fill: var(--text);
+  }
+  .state-compare svg .sm {
+    font-size: 8.5px;
+    fill: var(--text-muted);
+  }
+  .state-compare svg .lab {
+    font-weight: 600;
+  }
+  .state-compare svg .node {
+    fill: var(--bg);
+    stroke: var(--line);
+  }
+  .state-compare svg .em {
+    fill: var(--bg);
+    stroke: var(--accent);
+  }
+  .state-compare svg .edge {
+    fill: none;
+    stroke: var(--charcoal);
+    opacity: 0.65;
+  }
+  .state-compare svg .flow,
+  .state-compare svg .arrow {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.4;
+  }
+  .state-compare svg .flow {
+    stroke-dasharray: 3 3;
+  }
+  .state-principle {
+    padding: 18px 22px;
+    border-left: 3px solid var(--accent);
+    background: var(--paper-raised);
+  }
+  .state-principle p {
+    margin-top: 6px !important;
+  }
+  .state-rows {
+    margin: 0;
+    border-top: 1px solid var(--line);
+  }
+  .state-rows > div {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 18px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line-faint);
+  }
+  .state-rows dt {
+    font: 500 11px/1.6 var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .state-rows dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+  .state-instances {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .state-instance {
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .state-instance-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .state-instance-head strong {
+    font: 400 17px/1.2 var(--font-display);
+    text-transform: uppercase;
+  }
+  .state-store,
+  .state-context {
+    padding: 10px;
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+  .state-store {
+    border-color: var(--accent);
+  }
+  .state-store strong,
+  .state-context strong {
+    display: block;
+    font-size: 13px;
+  }
+  .state-store small,
+  .state-context small {
+    display: block;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--text-muted);
+  }
+  .state-connector {
+    padding: 6px 0;
+    text-align: center;
+    font: 500 10px/1.5 var(--font-mono);
+    color: var(--text-muted);
+  }
+  .state-connector::before {
+    content: '↓';
+    display: block;
+    font-size: 15px;
+    color: var(--accent);
+  }
+  .state-parts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .state-parts span {
+    padding: 8px 3px;
+    border: 1px solid var(--line-faint);
+    text-align: center;
+    font-size: 11px;
+  }
+  .state-instance p {
+    margin-top: 12px !important;
+  }
+  .state-cost {
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+  }
+  .state-cost h4,
+  .state-lesson h4 {
+    margin: 6px 0 10px;
+  }
+  .state-lesson {
+    padding: 24px;
+    background: var(--carbon);
+    color: var(--bone);
+  }
+  .state-lesson .micro {
+    color: #e07a7d;
+  }
+  .state-lesson h4 {
+    color: var(--bone);
+    font-size: 24px;
+  }
+  .state-lesson-note {
+    margin-top: 12px !important;
+    font-size: 13px;
+    color: #c4bcaf;
+  }
+  @media (max-width: 640px) {
+    .state-problems,
+    .state-compare,
+    .state-instances {
+      grid-template-columns: 1fr;
+    }
+    .state-problems article + article {
+      border-left: 0;
+      border-top: 1px solid var(--line-faint);
+    }
+    .state-rows > div {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .state-compare svg {
+      max-width: 360px;
+    }
+    /* Diagrams shrink to ~0.85x on phones; larger type keeps labels readable. */
+    .state-compare svg text {
+      font-size: 11.5px;
+    }
+    .state-compare svg .sm {
+      font-size: 9.5px;
+    }
+    .state-figure,
+    .state-lesson {
+      padding: 14px;
+    }
+    [id^='state-case-'].fp-project-case-station {
+      padding-inline: 14px;
+    }
+  }
+  @media print {
+    .state-lesson {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+  }
 }
